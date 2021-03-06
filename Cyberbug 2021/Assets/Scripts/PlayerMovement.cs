@@ -25,8 +25,12 @@ public class PlayerMovement : MonoBehaviour{
     // Jumping
     [SerializeField] int walkableLayer;
     [SerializeField] float jumpVelocity = 10f;
-    bool wantsToJump = false;
-
+    [SerializeField] float timeToJumpAfterFalling = 0.1f;
+    public bool wantsToJump = false;
+    public bool wasOnGround = false;
+    public bool canJump;
+    
+    
     // Stick to ground
     [Tooltip("Physics steps after leaving ground until snapping is allowed")] [SerializeField]
     int stepsUntilSnapToGround = 5;
@@ -59,6 +63,11 @@ public class PlayerMovement : MonoBehaviour{
         HandleJumping();
         HandleMovement();
 
+        if (onGround) canJump = true;
+        if (!onGround && wasOnGround){
+            Invoke(nameof(DisableJump), timeToJumpAfterFalling);
+        }
+
         if (debugTextPresent){
             var horizontalVelocity = new Vector2(body.velocity.x, body.velocity.z);
             debugText.text = "Angle: " + slopeAngle.ToString("N1")
@@ -70,9 +79,15 @@ public class PlayerMovement : MonoBehaviour{
                                        + "\nShouldSnap: " + shouldSnap;
         }
 
+        
         // Reset values at the end of every physics update
+        wasOnGround = onGround;
         onGround = false;
         slopeAngle = 90f; // Reset contact angle
+    }
+
+    void DisableJump(){
+        canJump = false;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -170,8 +185,9 @@ public class PlayerMovement : MonoBehaviour{
     // Jump if holdin jump && on ground
     // TODO: allow jump after falling from ledge for ~0.5sec
     void HandleJumping(){
-        if (wantsToJump && onGround){
+        if (wantsToJump && canJump){
             wantsToJump = false;
+            canJump = false;
             body.velocity = new Vector3(body.velocity.x, jumpVelocity, body.velocity.z);
         }
     }
