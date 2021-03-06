@@ -16,7 +16,7 @@
  * Programozási nyelv: C#
  * Platform: Windows, WEBGL (ha a teljesítmény engedi)
 
-## Game design
+## Részletes terv
 
 ### Felhasználói interakciók:
  * Kamera mozgatása
