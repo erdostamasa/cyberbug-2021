@@ -2,36 +2,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour{
-    [Header("Setup")] [SerializeField] GameObject playerCamera;
+    [SerializeField] private Transform playerCamera;
+    [SerializeField] private Transform orientation;
+    [SerializeField] private Vector2 sensitivity = new Vector2(1f, 1f);
 
-    [Header("Settings")] [SerializeField] float cameraSensitivity = 5f;
+    private float targetAngleX = 0.0f;
 
-    Vector2 mouseDelta = Vector2.zero;
-    float targetVerticalRotation = 0.0f;
-    
-    void Awake(){
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+    private void LateUpdate(){
+        Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector3 currentRotation = playerCamera.localRotation.eulerAngles;
 
-    void LateUpdate(){
-        Vector3 currentRotation = playerCamera.transform.localRotation.eulerAngles;
+        // Calculate horizontal target
+        float targetAngleY = currentRotation.y + (mouseDelta.x * sensitivity.x);
 
-        float newHorizontal = currentRotation.y + (mouseDelta.x * cameraSensitivity * Time.deltaTime);
+        // Calculate vertical target
+        targetAngleX -= (mouseDelta.y * sensitivity.y);
+        targetAngleX = Mathf.Clamp(targetAngleX, -90f, 90f);
 
-        targetVerticalRotation -= ((mouseDelta.y * cameraSensitivity) * Time.deltaTime);
-        targetVerticalRotation = Mathf.Clamp(targetVerticalRotation, -90f, 90f);
-        
-        
-        Vector3 newRotation = new Vector3(targetVerticalRotation, newHorizontal, 0);
-        playerCamera.transform.localRotation = Quaternion.Euler(newRotation);
-    }
-
-    // Read mouse movement
-    public void ReceiveMouseDelta(InputAction.CallbackContext context){
-        mouseDelta = context.action.ReadValue<Vector2>();
+        // Apply rotation
+        playerCamera.localRotation = Quaternion.Euler(targetAngleX, targetAngleY, 0);
+        orientation.localRotation = Quaternion.Euler(0, targetAngleY, 0);
     }
 }
