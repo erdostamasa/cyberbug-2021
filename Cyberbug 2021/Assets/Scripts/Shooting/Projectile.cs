@@ -43,8 +43,11 @@ public class Projectile : MonoBehaviour{
 
         // Execute effects at impact location
         if (Physics.Raycast(lastFramePosition, direction, out var hit, distance, ~ignoreLayer)){
-            Explosion(hit.point);
-            BulletImpact(hit);
+            //Explosion(hit.point);
+            Destructible other = hit.collider.GetComponent<Destructible>();
+            if(other != null) other.ReceiveProjectile();
+            Destroy(this.gameObject);
+            //BulletImpact(hit);
         }
 
         lastFramePosition = transform.position;

@@ -45,12 +45,9 @@ public class Gun : MonoBehaviour{
     void OrientBullet(){
         if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 100f, ~ignoreLayerWhenAiming)){
             targetPoint = hit.point;
-            Debug.Log(hit.collider.gameObject.name);
-            Debug.DrawLine(playerCamera.position, hit.point, Color.green, 0.1f);
         }
         else{
             targetPoint = playerCamera.position + playerCamera.forward * 50f;
-            Debug.DrawLine(playerCamera.position, playerCamera.position + playerCamera.forward * 100f, Color.red, 0.1f);
         }
     }
 
