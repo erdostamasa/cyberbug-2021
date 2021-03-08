@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 923520577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.737}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.6}
+  m_LocalScale: {x: 0.05, y: 0.07, z: 0.6}
   m_Children:
   - {fileID: 955030848}
   m_Father: {fileID: 2047392308}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a27854820ab01a94ba78cdb1266132ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8448
   timeBetweenShots: 0.1
-  aimPos: {x: 0, y: -0.167, z: -0.288}
+  aimPos: {x: 0, y: -0.06, z: -0.288}
   normalPos: {x: 0.306, y: -0.167, z: -0.288}
 --- !u!1 &4458194981818919190
 GameObject:
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 4458194982969350745}
   - component: {fileID: 4458194982969350744}
   m_Layer: 8
-  m_Name: Body
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   wasOnGround: 0
   canJump: 0
   onGround: 0
-  stepsUntilSnapToGround: 3
+  stepsUntilSnapToGround: 5
   groundSnappingDistance: 1.3
 --- !u!54 &4458194982969350744
 Rigidbody:
