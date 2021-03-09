@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEditor;
 #endif
+using System;
 using UnityEngine;
 
 namespace DitzelGames.FastIK
@@ -8,8 +9,19 @@ namespace DitzelGames.FastIK
     /// <summary>
     /// Fabrik IK Solver
     /// </summary>
-    public class FastIKFabric : MonoBehaviour
-    {
+    public class FastIKFabric : MonoBehaviour{
+
+        public float stepDistance = 0.5f;
+        public Transform rayOrigin;
+        public AnimationCurve stepPath;
+
+        public int interpolationFramesCount = 45;
+        int elapsedFrames = 0;
+
+        public Vector3 rootPosLastFrame;
+        public Vector3 rootVelocity;
+        
+        
         /// <summary>
         /// Chain length of bones
         /// </summary>
@@ -48,6 +60,9 @@ namespace DitzelGames.FastIK
         protected Quaternion StartRotationTarget;
         protected Transform Root;
 
+        Vector3 lastTarget;
+        
+        
 
         // Start is called before the first frame update
         void Awake()
@@ -106,15 +121,78 @@ namespace DitzelGames.FastIK
                 current = current.parent;
             }
 
-
-
+            rootPosLastFrame = transform.root.position;
+            
+            
+            Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out var hitInfo, 10f, ~(1 << 14));
+            lastTarget = hitInfo.point;
+            
         }
 
         // Update is called once per frame
-        void LateUpdate()
-        {
+        bool animating = false;
+
+
+        void FixedUpdate(){
+            rootVelocity = (transform.root.position - rootPosLastFrame).normalized;
+            rootPosLastFrame = transform.root.position;
+        }
+
+
+        void LateUpdate(){
+
+            int layerMask = 1 << 14;
+            layerMask = ~layerMask;
+            
+            //shoot ray down, find target
+            if (Physics.Raycast(rayOrigin.position + Vector3.up * 0.5f, Vector3.down, out var hitInfo, 10f, layerMask)){
+                Debug.DrawLine(rayOrigin.position + Vector3.up * 0.5f, rayOrigin.position + Vector3.up * 0.5f + Vector3.down * 3f, Color.green);
+
+                
+                
+                // Stick leg to last position ground
+                if (Vector3.Distance(hitInfo.point, lastTarget) < stepDistance){
+                    Target.position = lastTarget;
+                }
+                else{
+                    if (!animating){
+                        //find new target
+                        //Vector3 toNewTarget = (hitInfo.point - lastTarget);
+                        //lastTarget += toNewTarget;
+                        
+                        
+                        //Target.position = lastTarget;
+                        animating = true;
+                    }
+                }
+
+                if (animating){
+                    float interpolationRatio = (float)elapsedFrames / interpolationFramesCount;
+                    Vector3 interpolatedPosition = Vector3.Lerp(lastTarget, hitInfo.point + rootVelocity * 0.5f, interpolationRatio) + Vector3.up * stepPath.Evaluate(interpolationRatio) *0.4f;
+                    Target.position = interpolatedPosition;
+                    elapsedFrames++;
+                    if (elapsedFrames >= interpolationFramesCount){
+                        elapsedFrames = 0;
+                        animating = false;
+                        lastTarget = interpolatedPosition;
+                        Target.position = interpolatedPosition;
+                    }
+
+                }
+                
+
+                
+            }
+            else{
+                Debug.DrawLine(rayOrigin.position + Vector3.up * 0.5f, transform.position + Vector3.up * 0.5f + Vector3.down * 3f, Color.red);
+            }
+            
+            
+            
             ResolveIK();
         }
+        
+        
 
         private void ResolveIK()
         {
@@ -231,9 +309,11 @@ namespace DitzelGames.FastIK
                 current.rotation = Root.rotation * rotation;
         }
 
+#if UNITY_EDITOR
+        
         void OnDrawGizmos()
         {
-#if UNITY_EDITOR
+
             var current = this.transform;
             for (int i = 0; i < ChainLength && current != null && current.parent != null; i++)
             {
