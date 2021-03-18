@@ -1,0 +1,3 @@
+﻿interface IShootable{
+    void ReceiveProjectile();
+}
