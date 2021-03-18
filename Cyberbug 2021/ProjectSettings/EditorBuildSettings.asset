@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Planet_1.unity
     guid: f922c5b09c7eb7e47a4578072bf61d30
+  - enabled: 1
+    path: Assets/Scenes/Planet_2_(desert).unity
+    guid: 2a3ff4d8b5588954d951dbc91b987fcf
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7454276596fc7204ca90367b1b42bb75,
       type: 2}
