@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour, IShootable{
+public class EnemyAI : MonoBehaviour{
     public NavMeshAgent agent;
     public Transform playerTransform;
     public LayerMask walkableLayer, playerLayer;
@@ -21,9 +21,5 @@ public class EnemyAI : MonoBehaviour, IShootable{
 
     void ChasePlayer(){
         agent.SetDestination(playerTransform.position);
-    }
-
-    public void ReceiveProjectile(){
-        throw new NotImplementedException();
     }
 }
