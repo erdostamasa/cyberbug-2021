@@ -21,22 +21,22 @@ public class Gun : MonoBehaviour{
         timer = timeBetweenShots;
     }
 
+    bool canFire = true;
     void Update(){
-        timer -= Time.deltaTime;
-        var canFire = false;
-        if (timer <= 0){
-            canFire = true;
-            timer = timeBetweenShots;
-        }
-
-        if (Input.GetButtonDown("Fire1")){
+        if (canFire && Input.GetButton("Fire1")){
+            canFire = false;
             Shoot();
+            Invoke(nameof(EnableFiring),timeBetweenShots);
         }
 
         if (Input.GetButton("Fire2"))
             transform.localPosition = aimPos;
         else
             transform.localPosition = normalPos;
+    }
+
+    void EnableFiring(){
+        canFire = true;
     }
 
     RaycastHit hit;
