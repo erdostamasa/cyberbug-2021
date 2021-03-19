@@ -97,9 +97,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8448
   timeout: 10
-  speed: 200
-  explosionRadius: 3
-  explosionForce: 2
+  speed: 250
+  explosionRadius: 5
+  explosionForce: 5
   bulletForce: 20
   forceFalloff:
     serializedVersion: 2
