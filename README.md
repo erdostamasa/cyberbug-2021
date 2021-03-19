@@ -4,6 +4,7 @@
 ### Használt technológiák:
  * Verziókezelő szoftver: git
  * Verziókezelő szolgáltalás: GitHub
+ * Workflow: GitHub flow (https://guides.github.com/introduction/flow/)
  * Automatizált tesztelés:
    * GitHub Actions által futtatott unit tesztek
  * Continuous integration + deployment:
