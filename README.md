@@ -3,7 +3,7 @@
 
 ### Szükséges szoftverek:
  * Unity 2019.4.21f1
- * OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.12+; Ubuntu 16.04, 18.04, and CentOS 7.
+ * OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.12+
 
 ### Használt technológiák:
  * Verziókezelő szoftver: git
