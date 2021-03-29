@@ -26,7 +26,7 @@ jobs:
       - name: Run Unit tests
         uses: game-ci/unity-test-runner@v2.0-alpha-2
         with:
-          projectPath: './Cyberbug 2021'
+          projectPath: "./Cyberbug 2021"
           unityVersion: 2019.4.21f1
           
       # Upload test results
