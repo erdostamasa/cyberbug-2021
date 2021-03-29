@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   buildAndTestForSomePlatforms:
-    name: Build for ${{ matrix.targetPlatform }}
+    -name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -59,7 +59,7 @@ jobs:
           path: build
 		  
 		# Deploy to Github Pages
-    name : Deploy to GitHub Pages
+    -name : Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
         branch: gh-pages # The branch the action should deploy to.
