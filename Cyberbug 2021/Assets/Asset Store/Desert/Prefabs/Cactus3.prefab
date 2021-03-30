@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 419098}
   - component: {fileID: 3357800}
   - component: {fileID: 2324206}
+  - component: {fileID: 2196125949836132624}
   m_Layer: 0
   m_Name: cactus3
   m_TagString: Untagged
@@ -112,6 +113,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2196125949836132624
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 1aec1266c0ec1804c8c87f521a7cfc61, type: 3}
 --- !u!1 &197264
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +138,7 @@ GameObject:
   - component: {fileID: 429494}
   - component: {fileID: 3330312}
   - component: {fileID: 2393136}
+  - component: {fileID: 1492065341615376446}
   m_Layer: 0
   m_Name: cactus3flower
   m_TagString: Untagged
@@ -192,3 +208,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1492065341615376446
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 1aec1266c0ec1804c8c87f521a7cfc61, type: 3}
