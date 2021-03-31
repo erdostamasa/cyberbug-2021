@@ -4,7 +4,9 @@ on:
   #push:
    # branches: [main]
   pull_request:
-    branches: [main]
+    branches:
+      - main
+  workflow_dispatch:
   
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -21,9 +23,11 @@ jobs:
       # Cache
       - uses: actions/cache@v2.1.4
         with:
-          path: Library
-          key: Library
-
+          path: Cyberbug-2021/Library
+          key: Library-Cyberbug-2021-Test
+          restore-keys: |
+            Library-Cyberbug-2021-Test
+            Library-
       # Test
       - name: Run Unit tests
         uses: game-ci/unity-test-runner@v2.0-alpha-2
