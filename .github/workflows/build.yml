@@ -19,8 +19,11 @@ jobs:
       # Cache
       - uses: actions/cache@v2.1.4
         with:
-          path: Library
-          key: Library 
+          path: Cyberbug-2021/Library
+          key: Library-Cyberbug-2021-WebGL
+          restore-keys: |
+            Library-Cyberbug-2021-
+            Library-
 
       # Build
       - name: Build for WebGL
@@ -31,15 +34,7 @@ jobs:
           projectPath: './Cyberbug-2021'
           unityVersion: 2019.4.21f1
           targetPlatform: WebGL
-          #targetPlatform: StandaloneWindows64
           #allowDirtyBuild: true
-
-      # Output
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Build
-          path: build
           
       # Deploy to Github Pages
       - name : Deploy to GitHub Pages
@@ -59,18 +54,20 @@ jobs:
       # Cache
       - uses: actions/cache@v2.1.4
         with:
-          path: Library
-          key: Library 
+          path: Cyberbug-2021/Library
+          key: Library-Cyberbug-2021-Windows
+          restore-keys: |
+            Library-Cyberbug-2021-
+            Library-
 
       # Build
-      - name: Build for WebGL
+      - name: Build for Windows
         uses: game-ci/unity-builder@v2.0-alpha-6
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           projectPath: './Cyberbug-2021'
           unityVersion: 2019.4.21f1
-          #targetPlatform: WebGL
           targetPlatform: StandaloneWindows64
           #allowDirtyBuild: true
 
