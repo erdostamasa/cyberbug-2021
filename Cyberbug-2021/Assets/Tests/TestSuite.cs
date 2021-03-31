@@ -9,6 +9,7 @@ namespace Tests
     public class TestSuite{
 
         [UnityTest]
+		[Timeout(1000000)]
         public IEnumerator EnemyTakesDamage(){
             GameObject enemy = new GameObject();
             EnemyHealth health = enemy.AddComponent<EnemyHealth>();
