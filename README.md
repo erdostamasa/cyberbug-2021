@@ -1,9 +1,14 @@
 # Cyberbug 2021
 > First person shooter realisztikus fizikával, platforminggal, egyszerű mesterséges intelligenciával-val és low poly grafikával
 
+### Szükséges szoftverek:
+ * Unity 2019.4.21f1
+ * OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.12+
+
 ### Használt technológiák:
  * Verziókezelő szoftver: git
  * Verziókezelő szolgáltalás: GitHub
+ * Workflow: GitHub flow (https://guides.github.com/introduction/flow/)
  * Automatizált tesztelés:
    * GitHub Actions által futtatott unit tesztek
  * Continuous integration + deployment:
