@@ -39,6 +39,7 @@ jobs:
           failOnTestFailures: true
           failIfNoTests: false
   build:
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: test
     name: Build for Windows
     runs-on: ubuntu-latest
