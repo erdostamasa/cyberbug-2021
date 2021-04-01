@@ -327,6 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338418280946394500}
+  - component: {fileID: 259991651}
   m_Layer: 8
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -351,6 +352,18 @@ Transform:
   m_Father: {fileID: 4458194982236941749}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &259991651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659154912752529694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3fcba11130e1e43a445ce4259cb15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &597612115569831211
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,27 +6,33 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour{
     int selectedWeapon;
 
-    public int SelectedWapon{
+    public int SelectedWeapon{
         get => selectedWeapon;
-        set => selectedWeapon = value;
+        set{
+            selectedWeapon = value;
+            SwitchWeapon(selectedWeapon);
+        }
     }
 
-    public void SelectWeapon(int selected){
-        foreach (Transform weapon in transform){
-            weapon.gameObject.SetActive(false);
+    public void SwitchWeapon(int selected){
+        if (transform.childCount > selected){
+            foreach (Transform weapon in transform){
+                weapon.gameObject.SetActive(false);
+            }
+            transform.GetChild(selected).gameObject.SetActive(true);
         }
-        transform.GetChild(selected).gameObject.SetActive(true);
+        selectedWeapon = selected;
     }
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.Alpha1)){
-            SelectWeapon(0);
+            SwitchWeapon(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)){
-            SelectWeapon(1);
+            SwitchWeapon(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3)){
-            SelectWeapon(2);
+            SwitchWeapon(2);
         }
     }
 }

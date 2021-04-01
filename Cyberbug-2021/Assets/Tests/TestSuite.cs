@@ -6,29 +6,50 @@ using UnityEngine.TestTools;
 
 namespace Tests{
     public class TestSuite{
+        GameObject testObject;
+
+        [SetUp]
+        public void Setup(){
+            testObject = new GameObject();
+        }
+
+        [TearDown]
+        public void Teardown(){
+            Object.Destroy(testObject);
+        }
+
         [UnityTest]
         public IEnumerator ShootableTakesDamage(){
-            GameObject shootable = new GameObject();
-            EnemyHealth health = shootable.AddComponent<EnemyHealth>();
+            EnemyHealth health = testObject.AddComponent<EnemyHealth>();
             health.MaxHealth = 5;
             yield return new WaitForSeconds(0.1f);
             health.ReceiveProjectile();
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(4, health.Health);
-
-            Object.Destroy(shootable);
         }
 
         [UnityTest]
         public IEnumerator ShootingUsesAmmo(){
-            GameObject gun = new GameObject();
-            AmmoManager ammoManager = gun.AddComponent<AmmoManager>();
+            AmmoManager ammoManager = testObject.AddComponent<AmmoManager>();
             ammoManager.AmmoCount = 60;
             yield return new WaitForSeconds(0.1f);
             ammoManager.Fire();
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(59, ammoManager.AmmoCount);
-            Object.Destroy(gun);
+        }
+
+        
+        [UnityTest]
+        public IEnumerator SwitchingWeapons(){
+            GameObject player = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/PlayerContainer"));
+            WeaponSwitching weapons = player.GetComponentInChildren<WeaponSwitching>();
+            weapons.SelectedWeapon = 0;
+            yield return new WaitForSeconds(0.1f);
+            Assert.AreEqual(0, weapons.SelectedWeapon);
+            yield return new WaitForSeconds(0.1f);
+            weapons.SwitchWeapon(2);
+            yield return new WaitForSeconds(0.1f);
+            Assert.AreEqual(2, weapons.SelectedWeapon);
         }
     }
 }
