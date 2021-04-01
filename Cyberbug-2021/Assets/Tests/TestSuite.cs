@@ -110,12 +110,13 @@ namespace Tests{
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(97, health.Health);
         }
-        
+        /*
+         //Error test
         [UnityTest]
         public IEnumerator TestError()
         {
             Assert.AreEqual(0, 1);
             yield return null;
-        }
+        }*/
     }
 }
