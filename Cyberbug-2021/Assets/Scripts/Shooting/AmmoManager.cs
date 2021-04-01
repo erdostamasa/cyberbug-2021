@@ -33,7 +33,7 @@ public class AmmoManager : MonoBehaviour{
         EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);
     }
 
-    public void addAmmo(int ammoToAdd){
+    public void AddAmmo(int ammoToAdd){
         int newAmmo = ammoInInventory + ammoToAdd;
         if (newAmmo > maxAmmoInventory){
             ammoInInventory = maxAmmoInventory;

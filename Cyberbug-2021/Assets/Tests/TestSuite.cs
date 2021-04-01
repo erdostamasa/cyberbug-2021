@@ -39,12 +39,23 @@ namespace Tests{
         public IEnumerator ShootingUsesAmmo(){
             AmmoManager ammoManager = testObject.AddComponent<AmmoManager>();
             ammoManager.MagazineSize = 5;
-            ammoManager.addAmmo(5);
+            ammoManager.AddAmmo(5);
             ammoManager.Reload();
             yield return new WaitForSeconds(0.1f);
             ammoManager.Fire();
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(4, ammoManager.AmmoLoaded);
+        }
+        
+        [UnityTest]
+        public IEnumerator CantShootWithoutAmmo(){
+            AmmoManager ammoManager = testObject.AddComponent<AmmoManager>();
+            ammoManager.MagazineSize = 30;
+            yield return new WaitForSeconds(0.1f);
+            Assert.AreEqual(0, ammoManager.AmmoLoaded);
+            ammoManager.Fire();
+            yield return new WaitForSeconds(0.1f);
+            Assert.AreEqual(0, ammoManager.AmmoLoaded);
         }
 
         [UnityTest]
@@ -54,7 +65,7 @@ namespace Tests{
             yield return new WaitForSeconds(0.1f);
             
             Assert.AreEqual(0, ammoManager.AmmoLoaded);
-            ammoManager.addAmmo(8);
+            ammoManager.AddAmmo(8);
             yield return new WaitForSeconds(0.1f);
             
             ammoManager.Reload();
