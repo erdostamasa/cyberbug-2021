@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 419098}
   - component: {fileID: 3357800}
   - component: {fileID: 2324206}
-  - component: {fileID: 2196125949836132624}
+  - component: {fileID: 3931110811046140440}
   m_Layer: 0
   m_Name: cactus3
   m_TagString: Untagged
@@ -113,8 +113,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2196125949836132624
-MeshCollider:
+--- !u!65 &3931110811046140440
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,10 +123,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 1aec1266c0ec1804c8c87f521a7cfc61, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.5626833, y: 1.1720929, z: 1.5525105}
+  m_Center: {x: 0, y: 0.58834016, z: 0.0000002682209}
 --- !u!1 &197264
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +137,7 @@ GameObject:
   - component: {fileID: 429494}
   - component: {fileID: 3330312}
   - component: {fileID: 2393136}
-  - component: {fileID: 1492065341615376446}
+  - component: {fileID: 914839740960699546}
   m_Layer: 0
   m_Name: cactus3flower
   m_TagString: Untagged
@@ -208,8 +207,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1492065341615376446
-MeshCollider:
+--- !u!65 &914839740960699546
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -218,7 +217,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 1aec1266c0ec1804c8c87f521a7cfc61, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.0484746, y: 0.2044344, z: 1.0484746}
+  m_Center: {x: -0.00000017881393, y: 1.2058748, z: 0.0000011026859}
