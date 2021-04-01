@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597612117550094111}
   - component: {fileID: 597612117550094110}
+  - component: {fileID: 1785359105459072724}
   m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
@@ -258,3 +259,15 @@ MonoBehaviour:
   timeBetweenShots: 0.15
   aimPos: {x: 0, y: -0.06, z: -0.288}
   normalPos: {x: 0.306, y: -0.167, z: -0.288}
+--- !u!114 &1785359105459072724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597612117550094104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b4453a1588ad645b0271d7a70c2969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
