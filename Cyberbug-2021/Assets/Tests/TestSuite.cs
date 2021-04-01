@@ -8,17 +8,21 @@ namespace Tests{
     public class TestSuite{
         GameObject testObject;
         GameObject testPlayer;
+        EventManager eventManager;
         
         [SetUp]
         public void Setup(){
             testObject = new GameObject();
             testPlayer = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/PlayerContainer"));
+            GameObject em = new GameObject();
+            eventManager = em.AddComponent<EventManager>();
         }
 
         [TearDown]
         public void Teardown(){
             Object.Destroy(testObject);
             Object.Destroy(testPlayer);
+            Object.Destroy(eventManager);
         }
 
         [UnityTest]
@@ -34,13 +38,44 @@ namespace Tests{
         [UnityTest]
         public IEnumerator ShootingUsesAmmo(){
             AmmoManager ammoManager = testObject.AddComponent<AmmoManager>();
-            ammoManager.AmmoCount = 60;
+            ammoManager.MagazineSize = 5;
+            ammoManager.addAmmo(5);
+            ammoManager.Reload();
             yield return new WaitForSeconds(0.1f);
             ammoManager.Fire();
             yield return new WaitForSeconds(0.1f);
-            Assert.AreEqual(59, ammoManager.AmmoCount);
+            Assert.AreEqual(4, ammoManager.AmmoLoaded);
         }
-        
+
+        [UnityTest]
+        public IEnumerator ReloadingWeaponSetsCorrectAmmo(){
+            AmmoManager ammoManager = testObject.AddComponent<AmmoManager>();
+            ammoManager.MagazineSize = 5;
+            yield return new WaitForSeconds(0.1f);
+            
+            Assert.AreEqual(0, ammoManager.AmmoLoaded);
+            ammoManager.addAmmo(8);
+            yield return new WaitForSeconds(0.1f);
+            
+            ammoManager.Reload();
+            yield return new WaitForSeconds(0.1f);
+            
+            Assert.AreEqual(5, ammoManager.AmmoLoaded);
+            Assert.AreEqual(3, ammoManager.AmmoInInventory);
+            yield return new WaitForSeconds(0.1f);
+            
+            for (int i = 0; i < 5; i++){
+                ammoManager.Fire();
+            }
+            yield return new WaitForSeconds(0.1f);
+            
+            Assert.AreEqual(0, ammoManager.AmmoLoaded);
+            ammoManager.Reload();
+            yield return new WaitForSeconds(0.1f);
+            
+            Assert.AreEqual(3, ammoManager.AmmoLoaded);
+        }
+
         [UnityTest]
         public IEnumerator SwitchingWeapons(){
             WeaponSwitching weapons = testPlayer.GetComponentInChildren<WeaponSwitching>();
