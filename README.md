@@ -30,56 +30,56 @@
  * Újabb fegyverek megszerzése
 
 ### Felhasználói interakciók:
- [x] Kamera mozgatása
- [x] Mozgás
- [x] Ugrás
- [x] Lövés fegyverrel
- [ ] Fegyver újratöltése
- [x] Fegyverek váltása
- [ ] Gránát dobása
- [ ] Felhasználói felület
-   [x] Főmenü
-   [ ] Pause menu
-   [ ] Pálya kiválasztása
-   [ ] HUD
+ - [x] Kamera mozgatása
+ - [x] Mozgás
+ - [x] Ugrás
+ - [x] Lövés fegyverrel
+ - [ ] Fegyver újratöltése
+ - [x] Fegyverek váltása
+ - [ ] Gránát dobása
+ - [ ] Felhasználói felület
+   - [x] Főmenü
+   - [ ] Pause menu
+   - [ ] Pálya kiválasztása
+   - [ ] HUD
 
 ### Szimulációk:
- [x] Unity rigidbody szimuláció
- [x] Reszponzív mozgás
+ - [x] Unity rigidbody szimuláció
+ - [x] Reszponzív mozgás
 
 ### Környezet:
- [ ] Low poly modellek és környezet
- [ ] Több pálya
+ - [ ] Low poly modellek és környezet
+ - [ ] Több pálya
    * Egyre nehezednek
- [ ] Végtelen aréna egyre több/erősebb ellenféllel
- [ ] Ellenségek
-   [x] Követik a játékos pozícióját
-   [ ] Céloznak és lőnek a játékosra
-   [ ] Lőszert és gránátot dobnak ha elpusztulnak
- [ ] Elpusztítható dobozokból lőszer esik
+ - [ ] Végtelen aréna egyre több/erősebb ellenféllel
+ - [ ] Ellenségek
+   - [x] Követik a játékos pozícióját
+   - [ ] Céloznak és lőnek a játékosra
+   - [ ] Lőszert és gránátot dobnak ha elpusztulnak
+ - [ ] Elpusztítható dobozokból lőszer esik
 
 ### Grafika, kinézet:
  * Animációk
    * Játékos
-     [ ] Lövés
-     [ ] Újratöltés
-     [ ] Fegyver váltás
-     [ ] Mozgás
-     [ ] Veszítés
+     - [ ] Lövés
+     - [ ] Újratöltés
+     - [ ] Fegyver váltás
+     - [ ] Mozgás
+     - [ ] Veszítés
    * Ellenségek
-     [x] Mozgás
-     [ ] Lövés
-     [ ] Részecske effektek
- [ ] Robbanás
-   [ ] Golyónyomok
+     - [x] Mozgás
+     - [ ] Lövés
+     - [ ] Részecske effektek
+ - [ ] Robbanás
+   - [ ] Golyónyomok
 
 ### Extra funkciók:
- [ ] Futás
- [ ] Guggolás
- [ ] Közelharc
- [ ] Mozgó / forgó platformok
- [x] Procedurális animáció inverz kinematikával
- [ ] Pénz / bolt rendszer
- [ ] Pont / highscore rendszer
- [ ] Kooperatív többjátékos mód
- [ ] Játékos játékos ellen többjátékos mód
+ - [ ] Futás
+ - [ ] Guggolás
+ - [ ] Közelharc
+ - [ ] Mozgó / forgó platformok
+ - [x] Procedurális animáció inverz kinematikával
+ - [ ] Pénz / bolt rendszer
+ - [ ] Pont / highscore rendszer
+ - [ ] Kooperatív többjátékos mód
+ - [ ] Játékos játékos ellen többjátékos mód
