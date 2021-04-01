@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour{
-    int selectedWeapon;
+    int selectedWeapon = 0;
 
     public int SelectedWeapon{
         get => selectedWeapon;
