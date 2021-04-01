@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IShootable{
-    
     [SerializeField] int maxHealth = 3;
     [SerializeField] RagdollController ragdoll;
-    
-    public int currentHealth;
+
+    int currentHealth;
+
+    public int Health => currentHealth;
+
+    public int MaxHealth{
+        get => maxHealth;
+        set{
+            maxHealth = value;
+            currentHealth = maxHealth;
+        }
+    }
 
     void Start(){
         currentHealth = maxHealth;
