@@ -12,9 +12,9 @@ public class EventManager : MonoBehaviour{
         instance = this;
     }
     
-    public event Action onWeaponSwitched;
-    public void WeaponSwitched(){
-        onWeaponSwitched?.Invoke();
+    public event Action<int> onWeaponSwitched;
+    public void WeaponSwitched(int weaponNumber){
+        onWeaponSwitched?.Invoke(weaponNumber);
     }
 
     public event Action<int, int> onAmmoChanged;

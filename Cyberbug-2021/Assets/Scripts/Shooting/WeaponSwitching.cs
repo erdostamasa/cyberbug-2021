@@ -27,12 +27,19 @@ public class WeaponSwitching : MonoBehaviour{
     void Update(){
         if (Input.GetKeyDown(KeyCode.Alpha1)){
             SwitchWeapon(0);
+            EventManager.instance.WeaponSwitched(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)){
             SwitchWeapon(1);
+            EventManager.instance.WeaponSwitched(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3)){
             SwitchWeapon(2);
+            EventManager.instance.WeaponSwitched(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4)){
+            SwitchWeapon(3);
+            EventManager.instance.WeaponSwitched(3);
         }
     }
 }
