@@ -12,7 +12,7 @@ public class PlayerCamera : MonoBehaviour{
     private float targetAngleX = 0.0f;
 
     void Update(){
-        if (Input.GetKeyDown(KeyCode.R)){
+        if (Input.GetKeyDown(KeyCode.B)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
