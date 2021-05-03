@@ -5,15 +5,13 @@ using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour{
-    [Header("Setup")]
-    [SerializeField] Transform orientation;
+    [Header("Setup")] [SerializeField] Transform orientation;
     [SerializeField] TextMeshProUGUI debugText;
     [SerializeField] float gravityStrength = 30f;
     Rigidbody body;
     bool debugTextPresent;
-    
-    [Header("Movement")]
-    [SerializeField] float acceleration = 80f;
+
+    [Header("Movement")] [SerializeField] float acceleration = 80f;
     [SerializeField] float maxSpeed = 8f;
     [SerializeField] float airSpeedMultiplier = 0.5f;
     [SerializeField] float counterMovement = 6f;
@@ -25,21 +23,24 @@ public class PlayerMovement : MonoBehaviour{
 
     [Header("Jumping")]
     //[SerializeField] int walkableLayer;
-    [SerializeField] float jumpVelocity = 10f;
+    [SerializeField]
+    float jumpVelocity = 10f;
+
     [SerializeField] float timeToJumpAfterFalling = 0.1f;
     public bool wantsToJump;
     public bool wasOnGround;
     public bool canJump;
     public bool onGround;
 
-    [Header("Ground snapping")]
-    [Tooltip("Physics steps after leaving ground until snapping is allowed")] [SerializeField]
+    [Header("Ground snapping")] [Tooltip("Physics steps after leaving ground until snapping is allowed")] [SerializeField]
     int stepsUntilSnapToGround = 3;
+
     [Tooltip("Downward raycast distance. Determines if we should snap to the ground")] [SerializeField]
     float groundSnappingDistance = 1.1f;
+
     int stepsSinceLastGrounded;
     bool shouldSnap;
-    
+
     void Start(){
         if (debugText != null) debugTextPresent = true;
         body = GetComponent<Rigidbody>();
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour{
         AdjustDirectionOnSlope();
         HandleMovement();
         SnapToGround();
-        
+
         HandleJumping();
         // Debug display
         if (debugTextPresent){
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour{
                                        + "\nVelocity: " + horizontalVelocity.magnitude.ToString("N5")
                                        + "\nShouldSnap: " + shouldSnap;
         }
-        
+
         // Reset values at the end of every physics update
         wasOnGround = onGround;
         onGround = false;
@@ -76,7 +77,7 @@ public class PlayerMovement : MonoBehaviour{
     void DisableJump(){
         canJump = false;
     }
-    
+
     void UpdateState(){
         stepsSinceLastGrounded += 1;
         onGround = slopeAngle <= maxSlopeAngle;
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour{
         if (onGround){
             stepsSinceLastGrounded = 0;
         }
+        else if (slopeAngle < 89f){ }
         else{
             surfaceNormal = transform.up;
         }
@@ -108,7 +110,7 @@ public class PlayerMovement : MonoBehaviour{
 
         // At this point we unintentionally lost contact with
         // the ground and should snap to it.
-        
+
         //surfaceNormal = hit.normal;
         float speed = body.velocity.magnitude;
         float dot = Vector3.Dot(body.velocity, hit.normal);
@@ -133,23 +135,34 @@ public class PlayerMovement : MonoBehaviour{
     // Find surface with the smallest angle
     // TODO: calculate average normal is multiple surfaces present
     Vector3 surfaceNormal;
+
     void EvaluateCollision(Collision other){
         foreach (var contact in other.contacts){
             var normal = contact.normal;
             var angle = Vector3.Angle(Vector3.up, normal);
-            if (angle < slopeAngle){
+            if (onGround && angle < slopeAngle){
+                slopeAngle = angle;
+                surfaceNormal = normal;
+            }
+            else if (!onGround && angle < 89f){
                 slopeAngle = angle;
                 surfaceNormal = normal;
             }
         }
     }
-    
+
     // Always move parallel to the ground
     Vector3 adjustedForward;
     Vector3 adjustedRight;
+
     void AdjustDirectionOnSlope(){
         // Only adjust angles when on ground
         if (onGround){
+            adjustedForward = Vector3.ProjectOnPlane(orientation.forward, surfaceNormal).normalized;
+            adjustedRight = Vector3.ProjectOnPlane(orientation.right, surfaceNormal).normalized;
+        }
+        // or touching slope
+        else if (slopeAngle < 89f){
             adjustedForward = Vector3.ProjectOnPlane(orientation.forward, surfaceNormal).normalized;
             adjustedRight = Vector3.ProjectOnPlane(orientation.right, surfaceNormal).normalized;
         }
@@ -158,12 +171,12 @@ public class PlayerMovement : MonoBehaviour{
             adjustedRight = orientation.right;
         }
     }
-    
+
     void HandleJumping(){
         if (!onGround && wasOnGround){
             Invoke(nameof(DisableJump), timeToJumpAfterFalling);
         }
-        
+
         if (wantsToJump && canJump){
             wantsToJump = false;
             canJump = false;
@@ -196,11 +209,12 @@ public class PlayerMovement : MonoBehaviour{
 
         // Calculate velocity relative to look direction
         var relativeVel = orientation.InverseTransformDirection(body.velocity);
-        
+
         // Stop sliding if there is no movement input
         if (Mathf.Abs(relativeVel.x) > stopSlidingThreshold && Mathf.Abs(horizontalInput) < 0.05f){
             body.AddForce(adjustedRight * (_moveSpeed * Time.fixedDeltaTime * -relativeVel.x * _counterMovement));
         }
+
         if (Mathf.Abs(relativeVel.z) > stopSlidingThreshold && Mathf.Abs(verticalInput) < 0.05f){
             body.AddForce(adjustedForward * (_moveSpeed * Time.fixedDeltaTime * -relativeVel.z * _counterMovement));
         }
@@ -224,10 +238,30 @@ public class PlayerMovement : MonoBehaviour{
             gravityDirection = (Quaternion.AngleAxis(slopeAngle, perpendicularVector) * transform.up * -1).normalized * gravityStrength;
         }
         else{
+            if (slopeAngle < 89f){
+                //we are in the air but touching a slope
+
+
+                Vector3 input = adjustedForward * verticalInput + adjustedRight * horizontalInput;
+                float product = Vector3.Dot(input, transform.up);
+
+                //we are facing up
+                if (product > 0){
+                    verticalInput = 0;
+                    horizontalInput = 0;
+                }
+
+
+                //Debug.Log("Product: " + product);
+                Debug.Log(Vector3.Dot(input, transform.up));
+                Debug.DrawLine(transform.position, transform.position + input, Color.red);
+            }
+
             gravityDirection = transform.up * (-1 * gravityStrength);
         }
+
         body.AddForce(gravityDirection);
-        
+
         // Apply movement
         body.AddForce(adjustedForward * (verticalInput * acceleration));
         body.AddForce(adjustedRight * (horizontalInput * acceleration));
