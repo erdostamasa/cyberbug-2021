@@ -44,8 +44,6 @@ public class PlayerMovement : MonoBehaviour{
         if (debugText != null) debugTextPresent = true;
         body = GetComponent<Rigidbody>();
         body.useGravity = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update(){

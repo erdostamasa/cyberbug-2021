@@ -40,6 +40,7 @@ public class Gun : MonoBehaviour{
     bool canFire = true;
 
     void Update(){
+        if (PauseMenu.GameIsPaused) return;
         if (!selected) return;
 
         if (canFire && Input.GetButton("Fire1")){
