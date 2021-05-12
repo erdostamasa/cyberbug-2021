@@ -10,9 +10,24 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     
-    public void StartGame()
+    public void StartLevel1()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
+    }
+    
+    public void StartLevel2()
+    {
+        SceneManager.LoadScene(2);
+    }
+    
+    public void StartLevel3()
+    {
+        SceneManager.LoadScene(3);
+    }
+    
+    public void StartArena()
+    {
+        SceneManager.LoadScene(4);
     }
 
 }
