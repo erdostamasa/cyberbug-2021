@@ -82291,6 +82291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IKenemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7699500358902473459, guid: b38d9eafe8f96c14c99ef052067703c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7699500358902473470, guid: b38d9eafe8f96c14c99ef052067703c1,
         type: 3}
       propertyPath: m_RootOrder
