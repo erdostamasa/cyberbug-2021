@@ -10,6 +10,7 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
     [SerializeField] GameObject grenadeImage;
     [SerializeField] GameObject pistolImage;
     [SerializeField] TextMeshProUGUI ammo;
+    [SerializeField] GameObject ammoObject;
     
     void Start()
     {
@@ -25,6 +26,7 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
 
     void AmmoUpdate(int ammoLoaded, int ammoInInventory)
     {
+        ammoObject.SetActive(true);
         ammo.text = ammoLoaded + "/" + ammoInInventory;
     }
 
@@ -36,7 +38,6 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
             shotgunImage.SetActive(false);
             grenadeImage.SetActive(false);
             pistolImage.SetActive(true);
-            //ammo.text = ammoLoaded + "/" + ammoInInventory;
         }
         else if (weaponNumber==1)
         {   
@@ -44,7 +45,6 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
             shotgunImage.SetActive(true);
             grenadeImage.SetActive(false);
             pistolImage.SetActive(false);
-            //ammo.text = ammoLoaded + "/" + ammoInInventory;
         }
         else if (weaponNumber==2)
         {
@@ -52,7 +52,6 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
             shotgunImage.SetActive(false);
             grenadeImage.SetActive(false);
             pistolImage.SetActive(false);
-            //ammo.text = ammoLoaded + "/" + ammoInInventory;
         }
         else if (weaponNumber == 3)
         {
@@ -60,7 +59,6 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
             shotgunImage.SetActive(false);
             grenadeImage.SetActive(true);
             pistolImage.SetActive(false);
-            //ammo.text = ammoLoaded + "/" + ammoInInventory;
         }
     }
 
