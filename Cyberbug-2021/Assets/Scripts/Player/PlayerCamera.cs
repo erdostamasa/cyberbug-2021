@@ -12,12 +12,13 @@ public class PlayerCamera : MonoBehaviour{
     private float targetAngleX = 0.0f;
 
     void Update(){
-        if (Input.GetKeyDown(KeyCode.R)){
+        if (Input.GetKeyDown(KeyCode.B)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
     private void LateUpdate(){
+        if (PauseMenu.GameIsPaused) return;
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         Vector3 currentRotation = playerCamera.localRotation.eulerAngles;
 
