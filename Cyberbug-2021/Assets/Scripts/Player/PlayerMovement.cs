@@ -51,6 +51,12 @@ public class PlayerMovement : MonoBehaviour{
         ReadInput();
     }
 
+
+    Vector3 steepNormal;
+    int steepContactCount;
+    //bool OnSteep => steepContactCount > 0;
+
+
     void FixedUpdate(){
         UpdateState();
         AdjustDirectionOnSlope();
@@ -71,7 +77,9 @@ public class PlayerMovement : MonoBehaviour{
         // Reset values at the end of every physics update
         wasOnGround = onGround;
         onGround = false;
-        slopeAngle = 90f; // Reset contact angle    
+        slopeAngle = 90f; // Reset contact angle
+        steepContactCount = 0;
+        steepNormal = Vector3.zero;
     }
 
     void DisableJump(){
@@ -80,7 +88,7 @@ public class PlayerMovement : MonoBehaviour{
 
     void UpdateState(){
         stepsSinceLastGrounded += 1;
-        onGround = slopeAngle <= maxSlopeAngle;
+        onGround = slopeAngle <= maxSlopeAngle || CheckSteepContacts();
         if (onGround) canJump = true;
         if (onGround){
             stepsSinceLastGrounded = 0;
@@ -91,6 +99,18 @@ public class PlayerMovement : MonoBehaviour{
         }
     }
 
+    bool CheckSteepContacts(){
+        if (steepContactCount > 1){
+            steepNormal.Normalize();
+            var angle = Vector3.Angle(Vector3.up, steepNormal);
+            if (angle < maxSlopeAngle){
+                surfaceNormal = steepNormal;
+                return true;
+            }
+        }
+        return false;
+    }
+    
     Vector3 snappingForward;
     Vector3 snappingRight;
 
@@ -147,6 +167,8 @@ public class PlayerMovement : MonoBehaviour{
             else if (!onGround && angle < 89f){
                 slopeAngle = angle;
                 surfaceNormal = normal;
+                steepContactCount++;
+                steepNormal += normal;
             }
         }
     }
@@ -253,8 +275,8 @@ public class PlayerMovement : MonoBehaviour{
 
 
                 //Debug.Log("Product: " + product);
-                Debug.Log(Vector3.Dot(input, transform.up));
-                Debug.DrawLine(transform.position, transform.position + input, Color.red);
+                //Debug.Log(Vector3.Dot(input, transform.up));
+                //Debug.DrawLine(transform.position, transform.position + input, Color.red);
             }
 
             gravityDirection = transform.up * (-1 * gravityStrength);
