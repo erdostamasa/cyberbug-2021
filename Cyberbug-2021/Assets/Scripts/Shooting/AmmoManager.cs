@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AmmoManager : MonoBehaviour{
     int ammoLoaded;
-    int ammoInInventory = 0;
-    int magazineSize;
+    [SerializeField] int ammoInInventory = 0;
+    [SerializeField] int magazineSize;
     public int maxAmmoInventory = 999;
 
     public int MagazineSize{
@@ -17,7 +18,11 @@ public class AmmoManager : MonoBehaviour{
     public int AmmoInInventory{
         get => ammoInInventory;
     }
-    
+
+    void Update(){
+        //Debug.Log(ammoLoaded + "/" + ammoInInventory);
+    }
+
     public int AmmoLoaded => ammoLoaded;
 
     public void Reload(){

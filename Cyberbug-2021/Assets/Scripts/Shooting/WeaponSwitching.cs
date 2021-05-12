@@ -17,9 +17,9 @@ public class WeaponSwitching : MonoBehaviour{
     public void SwitchWeapon(int selected){
         if (transform.childCount > selected){
             foreach (Transform weapon in transform){
-                weapon.gameObject.SetActive(false);
+                weapon.GetComponent<Gun>().Disable();
             }
-            transform.GetChild(selected).gameObject.SetActive(true);
+            transform.GetChild(selected).GetComponent<Gun>().Activate();
         }
         selectedWeapon = selected;
     }

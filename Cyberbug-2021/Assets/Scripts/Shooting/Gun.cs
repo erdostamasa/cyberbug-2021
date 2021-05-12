@@ -1,38 +1,62 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour{
-    [Header("Setup")]
-    [SerializeField] GameObject bulletPrefab;
+    [Header("Setup")] [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform shootingPoint;
     [SerializeField] Transform playerCamera;
     [SerializeField] LayerMask ignoreLayerWhenAiming;
+    public GameObject visual;
+    public bool selected = false;
+    AmmoManager ammo;
 
-    [Header("Settings")]
-    [SerializeField] float timeBetweenShots = 0.1f;
-    
-    [Header("Debug")]
-    [SerializeField] Vector3 aimPos;
+    [Header("Settings")] [SerializeField] float timeBetweenShots = 0.1f;
+
+    [Header("Debug")] [SerializeField] Vector3 aimPos;
     [SerializeField] Vector3 normalPos;
 
+    void Awake(){
+        ammo = gameObject.GetComponent<AmmoManager>();
+    }
+
     float timer;
+
     void Start(){
         timer = timeBetweenShots;
     }
 
+    public void Activate(){
+        visual.SetActive(true);
+        selected = true;
+    }
+
+    public void Disable(){
+        visual.SetActive(false);
+        selected = false;
+    }
+
     bool canFire = true;
+
     void Update(){
+        if (PauseMenu.GameIsPaused) return;
+        if (!selected) return;
+
         if (canFire && Input.GetButton("Fire1")){
             canFire = false;
             Shoot();
-            Invoke(nameof(EnableFiring),timeBetweenShots);
+            Invoke(nameof(EnableFiring), timeBetweenShots);
         }
 
         if (Input.GetButton("Fire2"))
             transform.localPosition = aimPos;
         else
             transform.localPosition = normalPos;
+
+        if (Input.GetKeyDown(KeyCode.R)){
+            ammo.Reload();
+        }
     }
 
     void EnableFiring(){
@@ -52,8 +76,11 @@ public class Gun : MonoBehaviour{
     }
 
     void Shoot(){
-        OrientBullet();
-        var bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
-        bullet.transform.forward = targetPoint - shootingPoint.position;
+        if (ammo.AmmoLoaded > 0){
+            OrientBullet();
+            var bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
+            bullet.transform.forward = targetPoint - shootingPoint.position;
+            ammo.Fire();
+        }
     }
 }
