@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour{
     public void Activate(){
         visual.SetActive(true);
         selected = true;
+        EventManager.instance.AmmoChanged(ammo.AmmoLoaded, ammo.AmmoInInventory);
     }
 
     public void Disable(){
