@@ -1,3 +1,3 @@
 ﻿interface IShootable{
-    void ReceiveProjectile();
+    void ReceiveProjectile(int damage);
 }

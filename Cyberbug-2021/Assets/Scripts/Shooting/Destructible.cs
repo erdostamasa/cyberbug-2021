@@ -10,8 +10,8 @@ public class Destructible : MonoBehaviour, IShootable{
         currentHealthPoints = maxHealthPoints;
     }
 
-    public void ReceiveProjectile(){
-        currentHealthPoints--;
+    public void ReceiveProjectile(int damage){
+        currentHealthPoints -= damage;
         if (currentHealthPoints <= 0){
             Destroy(this.gameObject);
         }
