@@ -11,7 +11,9 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform playerCamera;
     [SerializeField] LayerMask ignoreLayerWhenAiming;
     [SerializeField] ParticleSystem muzzleFlash;
-    
+
+    [SerializeField] AudioClip shootSound;
+    AudioSource audioPlayer;
     public GameObject visual;
     public bool selected = false;
     AmmoManager ammo;
@@ -30,6 +32,7 @@ public class Gun : MonoBehaviour
 
     void Start(){
         timer = timeBetweenShots;
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     public void Activate(){
@@ -94,6 +97,7 @@ public class Gun : MonoBehaviour
             }
             
             ammo.Fire();
+            audioPlayer.PlayOneShot(shootSound, Random.Range(0.23f, 0.26f));
         }
     }
 }

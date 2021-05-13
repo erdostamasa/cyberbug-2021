@@ -13,6 +13,10 @@ public class PickupAmmo : MonoBehaviour{
     [SerializeField] Transform grenadeT;
     AmmoManager grenade;
 
+    [SerializeField] AudioClip pickupSound;
+    
+    
+
     void Start(){
         pistol = pistolT.GetComponent<AmmoManager>();
         shotgun = shotgunT.GetComponent<AmmoManager>();
@@ -40,6 +44,7 @@ public class PickupAmmo : MonoBehaviour{
                     break;
             }
             Destroy(other.gameObject);
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, 0.2f);
         }
     }
 }
