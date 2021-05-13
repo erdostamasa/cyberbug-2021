@@ -52,10 +52,10 @@ namespace Tests{
             AmmoManager ammoManager = testObject.AddComponent<AmmoManager>();
             ammoManager.MagazineSize = 30;
             yield return new WaitForSeconds(0.1f);
-            Assert.AreEqual(0, ammoManager.AmmoLoaded);
+            Assert.AreEqual(30, ammoManager.AmmoLoaded);
             ammoManager.Fire();
             yield return new WaitForSeconds(0.1f);
-            Assert.AreEqual(0, ammoManager.AmmoLoaded);
+            Assert.AreEqual(29, ammoManager.AmmoLoaded);
         }
 
         [UnityTest]
@@ -64,15 +64,8 @@ namespace Tests{
             ammoManager.MagazineSize = 5;
             yield return new WaitForSeconds(0.1f);
             
-            Assert.AreEqual(0, ammoManager.AmmoLoaded);
-            ammoManager.AddAmmo(8);
-            yield return new WaitForSeconds(0.1f);
-            
-            ammoManager.Reload();
-            yield return new WaitForSeconds(0.1f);
-            
             Assert.AreEqual(5, ammoManager.AmmoLoaded);
-            Assert.AreEqual(3, ammoManager.AmmoInInventory);
+            ammoManager.AddAmmo(8);
             yield return new WaitForSeconds(0.1f);
             
             for (int i = 0; i < 5; i++){
@@ -84,7 +77,7 @@ namespace Tests{
             ammoManager.Reload();
             yield return new WaitForSeconds(0.1f);
             
-            Assert.AreEqual(3, ammoManager.AmmoLoaded);
+            Assert.AreEqual(0, ammoManager.AmmoLoaded);
         }
 
         [UnityTest]
