@@ -21,4 +21,10 @@ public class EventManager : MonoBehaviour{
     public void AmmoChanged(int inMagazine, int inInventory){
         onAmmoChanged?.Invoke(inMagazine, inInventory);
     }
+
+    public event Action<bool> onMapChanged;
+    public void MapChanged(bool enter)
+    {
+        onMapChanged?.Invoke(enter);
+    }
 }
