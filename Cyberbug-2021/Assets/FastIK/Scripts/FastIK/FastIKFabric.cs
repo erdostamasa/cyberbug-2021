@@ -145,7 +145,7 @@ namespace DitzelGames.FastIK
             layerMask = ~layerMask;
             
             //shoot ray down, find target
-            if (Physics.Raycast(rayOrigin.position + Vector3.up * 0.5f, Vector3.down, out var hitInfo, 10f, layerMask)){
+            if (Physics.Raycast(rayOrigin.position + Vector3.up * 0.5f, Vector3.down, out var hitInfo, 10f, 1 << 10)){
                 Debug.DrawLine(rayOrigin.position + Vector3.up * 0.5f, rayOrigin.position + Vector3.up * 0.5f + Vector3.down * 3f, Color.green);
 
                 

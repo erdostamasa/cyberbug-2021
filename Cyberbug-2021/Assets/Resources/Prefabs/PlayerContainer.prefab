@@ -74,9 +74,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoInInventory: 200
   magazineSize: 10
-  maxAmmoInventory: 999
+  maxAmmoInventory: 200
   reloadTime: 1
   animator: {fileID: 6280457579238048000}
+  visual: {fileID: 7171078008559949388}
 --- !u!1 &524279997735849566
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +428,7 @@ GameObject:
   - component: {fileID: 4458194982969350745}
   - component: {fileID: 4458194982969350744}
   - component: {fileID: 9002592351075941809}
+  - component: {fileID: 1526102951}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -582,6 +584,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e083fa07da9998b4190e6144b73a1c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1526102951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458194982969350736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943c81d4a460add4089f2ce1eb5e7c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistolT: {fileID: 491197452501099305}
+  shotgunT: {fileID: 5751247305390645805}
+  rifleT: {fileID: 2865648946898129518}
+  grenadeT: {fileID: 898581855685056986}
 --- !u!1 &5375829723798405551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,6 +5521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3fcba11130e1e43a445ce4259cb15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isReloading: 0
 --- !u!95 &6280457579238048000
 Animator:
   serializedVersion: 3
@@ -10439,9 +10458,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoInInventory: 600
   magazineSize: 60
-  maxAmmoInventory: 999
+  maxAmmoInventory: 600
   reloadTime: 1
   animator: {fileID: 6280457579238048000}
+  visual: {fileID: 4950319020207774404}
 --- !u!1 &7603116375409781633
 GameObject:
   m_ObjectHideFlags: 0
@@ -10728,9 +10748,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoInInventory: 5
   magazineSize: 1
-  maxAmmoInventory: 999
+  maxAmmoInventory: 5
   reloadTime: 1
   animator: {fileID: 0}
+  visual: {fileID: 5085215117646096913}
 --- !u!1 &8775803595843394176
 GameObject:
   m_ObjectHideFlags: 0
@@ -10804,9 +10825,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoInInventory: 60
   magazineSize: 6
-  maxAmmoInventory: 999
+  maxAmmoInventory: 60
   reloadTime: 1
   animator: {fileID: 6280457579238048000}
+  visual: {fileID: 5055484472784602567}
 --- !u!1 &9095673376241449233
 GameObject:
   m_ObjectHideFlags: 0

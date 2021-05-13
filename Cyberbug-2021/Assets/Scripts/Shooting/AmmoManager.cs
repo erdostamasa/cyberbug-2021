@@ -11,6 +11,8 @@ public class AmmoManager : MonoBehaviour{
     [SerializeField] private float reloadTime=1f;
     private bool isReloading = false;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject visual;
+    
     private void Start()
     {
         ammoLoaded = magazineSize;
@@ -69,7 +71,10 @@ public class AmmoManager : MonoBehaviour{
         else{
             ammoInInventory = newAmmo;
         }
-        EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);
+
+        if (visual.activeSelf){
+            EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);    
+        }
     }
     
     public void Fire(){
