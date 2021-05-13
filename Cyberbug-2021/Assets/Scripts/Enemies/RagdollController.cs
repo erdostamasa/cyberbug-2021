@@ -13,11 +13,13 @@ public class RagdollController : MonoBehaviour{
     Collider[] childrenCollider;
     Rigidbody[] childrenRigidbody;
     FastIKFabric[] childrenIK;
+
+    public Transform root;
     
     void Awake(){
-        childrenCollider = GetComponentsInChildren<Collider>();
-        childrenRigidbody = GetComponentsInChildren<Rigidbody>();
-        childrenIK = GetComponentsInChildren<FastIKFabric>();
+        childrenCollider = root.GetComponentsInChildren<Collider>();
+        childrenRigidbody = root.GetComponentsInChildren<Rigidbody>();
+        childrenIK = root.GetComponentsInChildren<FastIKFabric>();
     }
     
     void Start(){
