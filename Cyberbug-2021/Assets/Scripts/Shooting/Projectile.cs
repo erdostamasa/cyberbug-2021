@@ -20,6 +20,8 @@ public class Projectile : MonoBehaviour{
     [Tooltip("How strong the explosion should be relative to distace from impact point")]
     [SerializeField] AnimationCurve forceFalloff;
 
+    [SerializeField] int damage = 1;
+    
     Vector3 lastFramePosition;
 
     void Start(){
@@ -44,7 +46,7 @@ public class Projectile : MonoBehaviour{
         // Execute effects at impact location
         if (Physics.Raycast(lastFramePosition, direction, out var hit, distance, ~ignoreLayer)){
             IShootable other = hit.collider.GetComponent<IShootable>();
-            if(other != null) other.ReceiveProjectile();
+            if(other != null) other.ReceiveProjectile(damage);
             Destroy(this.gameObject);
             
             //BulletImpact(hit);

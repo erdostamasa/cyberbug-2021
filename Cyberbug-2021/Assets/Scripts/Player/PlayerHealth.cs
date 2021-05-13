@@ -11,12 +11,12 @@ public class PlayerHealth : MonoBehaviour, IShootable{
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.L)){
-            ReceiveProjectile();
+            ReceiveProjectile(10);
         }
     }
 
-    public void ReceiveProjectile(){
-        currentHealth--;
+    public void ReceiveProjectile(int damage){
+        currentHealth -= damage;
         EventManager.instance.PlayerHealthChanged(currentHealth);
     }
 }

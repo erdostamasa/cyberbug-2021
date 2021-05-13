@@ -23,8 +23,8 @@ public class EnemyHealth : MonoBehaviour, IShootable{
         currentHealth = maxHealth;
     }
 
-    public void ReceiveProjectile(){
-        currentHealth--;
+    public void ReceiveProjectile(int damage){
+        currentHealth -= damage;
         if (currentHealth <= 0){
             ragdoll.ToggleRagdoll(true);
         }
