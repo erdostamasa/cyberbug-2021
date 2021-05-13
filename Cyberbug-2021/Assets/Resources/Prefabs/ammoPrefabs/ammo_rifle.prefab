@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8882572872623336207}
   - component: {fileID: 8839917096987015949}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8882572872878177167}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bullet1_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 8798497701940853297}
   - component: {fileID: 248389766939489243}
   - component: {fileID: 2774097853706914452}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ammo_rifle
   m_TagString: AmmoLoot
   m_Icon: {fileID: 0}

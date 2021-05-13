@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 41216
+    m_Bits: 106752
   timeout: 10
   speed: 200
   explosionRadius: 3

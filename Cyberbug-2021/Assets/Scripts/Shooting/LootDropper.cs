@@ -12,9 +12,10 @@ public class LootDropper : MonoBehaviour{
         int dropCount = Random.Range(minDrop, maxDrop);
         for (int i = 0; i < dropCount; i++){
             int dropIndex = Random.Range(0, lootTable.Count);
-            if (Physics.Raycast(transform.position + Vector3.up * 2, Vector3.down, out var hit, 20f, 1 << 10)){
+            Vector3 randomOffset = new Vector3(Random.Range(-1.5f, 1.5f), 0, Random.Range(-1f, 1f));
+            if (Physics.Raycast(transform.position + randomOffset + Vector3.up * 2, Vector3.down, out var hit, 20f, 1 << 10)){
                 Vector3 lootPosition = hit.point;
-                Instantiate(lootTable[dropIndex], lootPosition + Vector3.up * 0.5f + new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-1f, 1f)), Quaternion.Euler(0, Random.Range(0, 360f), 0));
+                Instantiate(lootTable[dropIndex], lootPosition + Vector3.up * 0.5f + randomOffset, Quaternion.Euler(0, Random.Range(0, 360f), 0));
             }
         }
     }
