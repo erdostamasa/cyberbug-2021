@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Gun : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class Gun : MonoBehaviour
     }
 
     float timer;
+
+    [SerializeField] float randomSpread = 1f;
+    [SerializeField] int projectilePerShot = 1;
 
     void Start(){
         timer = timeBetweenShots;
@@ -79,8 +83,16 @@ public class Gun : MonoBehaviour
         if (ammo.AmmoLoaded > 0){
             muzzleFlash.Play();
             OrientBullet();
-            var bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
-            bullet.transform.forward = targetPoint - shootingPoint.position;
+            
+            for (int i = 0; i < projectilePerShot; i++){
+                var bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
+                bullet.transform.forward = targetPoint - shootingPoint.position;
+                float rx = Random.Range(-randomSpread, randomSpread);
+                float ry = Random.Range(-randomSpread, randomSpread);
+                float rz = Random.Range(-randomSpread, randomSpread);
+                bullet.transform.Rotate(rx, ry, rz);    
+            }
+            
             ammo.Fire();
         }
     }

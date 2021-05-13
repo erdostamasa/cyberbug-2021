@@ -4991,6 +4991,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1805895795511378157, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: randomSpread
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805895795511378157, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: projectilePerShot
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035344518661888222, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: randomSpread
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2493336327387375252, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: ammoInInventory
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4458194982077606229, guid: eedc69d59696dd24789543425ca2b6d3,
         type: 3}
       propertyPath: m_RootOrder
@@ -5060,6 +5080,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145416203576739780, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: ammoInInventory
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759914236964497763, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: magazineSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759914236964497763, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: ammoInInventory
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eedc69d59696dd24789543425ca2b6d3, type: 3}

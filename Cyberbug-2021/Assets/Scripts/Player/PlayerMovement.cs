@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour{
 
 
     void FixedUpdate(){
-        if (knockedBack) return;
+        //if (knockedBack) return;
         
         UpdateState();
         AdjustDirectionOnSlope();
