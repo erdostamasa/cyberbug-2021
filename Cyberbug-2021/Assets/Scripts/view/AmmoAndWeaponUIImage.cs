@@ -12,7 +12,7 @@ public class AmmoAndWeaponUIImage : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammo;
     [SerializeField] GameObject ammoObject;
     
-    void Start()
+    void Awake()
     {
         EventManager.instance.onAmmoChanged += AmmoUpdate;
         EventManager.instance.onWeaponSwitched += WeaponSwitch;

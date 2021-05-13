@@ -14,6 +14,11 @@ public class WeaponSwitching : MonoBehaviour{
         }
     }
 
+    void Start(){
+        SwitchWeapon(0);
+        EventManager.instance.WeaponSwitched(0);
+    }
+
     public void SwitchWeapon(int selected){
         if (transform.childCount > selected){
             foreach (Transform weapon in transform){
