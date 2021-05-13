@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour{
     int stepsSinceLastGrounded;
     bool shouldSnap;
 
+    public bool knockedBack = false;
+
     void Start(){
         if (debugText != null) debugTextPresent = true;
         body = GetComponent<Rigidbody>();
@@ -58,6 +60,8 @@ public class PlayerMovement : MonoBehaviour{
 
 
     void FixedUpdate(){
+        if (knockedBack) return;
+        
         UpdateState();
         AdjustDirectionOnSlope();
         HandleMovement();
@@ -157,6 +161,7 @@ public class PlayerMovement : MonoBehaviour{
     Vector3 surfaceNormal;
 
     void EvaluateCollision(Collision other){
+        knockedBack = false;
         foreach (var contact in other.contacts){
             var normal = contact.normal;
             var angle = Vector3.Angle(Vector3.up, normal);

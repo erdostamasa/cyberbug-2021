@@ -30,7 +30,7 @@ namespace Tests{
             EnemyHealth health = testObject.AddComponent<EnemyHealth>();
             health.MaxHealth = 5;
             yield return new WaitForSeconds(0.1f);
-            health.ReceiveProjectile();
+            health.ReceiveProjectile(1);
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(4, health.Health);
         }
@@ -95,11 +95,11 @@ namespace Tests{
         [UnityTest]
         public IEnumerator PlayerTakesDamage(){
             PlayerHealth health = testPlayer.GetComponentInChildren<PlayerHealth>();
-            health.ReceiveProjectile();
+            health.ReceiveProjectile(1);
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(99, health.Health);
-            health.ReceiveProjectile();
-            health.ReceiveProjectile();
+            health.ReceiveProjectile(1);
+            health.ReceiveProjectile(1);
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(97, health.Health);
         }

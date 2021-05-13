@@ -11,6 +11,11 @@ public class EventManager : MonoBehaviour{
     void Awake(){
         instance = this;
     }
+
+    public event Action<int> onPlayerHealthChanged;
+    public void PlayerHealthChanged(int newHealth){
+        onPlayerHealthChanged?.Invoke(newHealth);
+    }
     
     public event Action<int> onWeaponSwitched;
     public void WeaponSwitched(int weaponNumber){
@@ -20,5 +25,11 @@ public class EventManager : MonoBehaviour{
     public event Action<int, int> onAmmoChanged;
     public void AmmoChanged(int inMagazine, int inInventory){
         onAmmoChanged?.Invoke(inMagazine, inInventory);
+    }
+
+    public event Action<bool> onMapChanged;
+    public void MapChanged(bool enter)
+    {
+        onMapChanged?.Invoke(enter);
     }
 }

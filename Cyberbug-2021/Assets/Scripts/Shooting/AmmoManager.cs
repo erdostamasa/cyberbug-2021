@@ -41,6 +41,7 @@ public class AmmoManager : MonoBehaviour{
         if ((ammoLoaded != magazineSize) && ammoInInventory!=0)
         {
             isReloading = true;
+            WeaponSwitching.instance.isReloading = true;
             animator.SetBool("Reloading",true);
             yield return new WaitForSeconds(reloadTime);
             animator.SetBool("Reloading",false);
@@ -55,6 +56,7 @@ public class AmmoManager : MonoBehaviour{
                 ammoInInventory = 0;
             }
             isReloading = false;
+            WeaponSwitching.instance.isReloading = false;
             EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);
         }
     }
