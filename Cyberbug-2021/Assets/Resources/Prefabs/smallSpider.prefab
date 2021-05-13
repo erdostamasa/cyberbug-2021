@@ -109,7 +109,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.3000002, y: -0.23900032, z: 0.008998871}
+  m_ConnectedAnchor: {x: 0.29999924, y: -0.23899996, z: 0.009000778}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -184,7 +184,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.3009987, y: -0.23900032, z: 0.29399872}
+  m_ConnectedAnchor: {x: 0.3009987, y: -0.23899996, z: 0.29400063}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -259,7 +259,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.29800034, y: -0.23900032, z: -0.27999878}
+  m_ConnectedAnchor: {x: -0.29800034, y: -0.23899996, z: -0.2800007}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -334,7 +334,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.3009987, y: -0.23900032, z: -0.2800026}
+  m_ConnectedAnchor: {x: 0.3009987, y: -0.23899996, z: -0.2800007}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -409,7 +409,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.29800034, y: -0.23900032, z: 0.008998871}
+  m_ConnectedAnchor: {x: -0.29800034, y: -0.23899996, z: 0.009000778}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -484,7 +484,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000011026857, y: 0.060967457, z: -0.000000024472447}
+  m_ConnectedAnchor: {x: 0.000000092387225, y: 0.060967524, z: -0.00000003043278}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -559,7 +559,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000089406946, y: 0.05630897, z: -0.00000004935204}
+  m_ConnectedAnchor: {x: 0.000000053644193, y: 0.05630909, z: -0.000000013589185}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -742,7 +742,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000014305115, y: 0.056309015, z: 0.000000034094448}
+  m_ConnectedAnchor: {x: 0.00000004768373, y: 0.05630911, z: -0.000000025510122}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -817,7 +817,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000019206423, y: 0.056309164, z: 0.000000010252582}
+  m_ConnectedAnchor: {x: -0.0000000013293368, y: 0.056309164, z: 0.000000010252656}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -967,7 +967,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000001192093, y: 0.056309283, z: 0.000000022173552}
+  m_ConnectedAnchor: {x: 0.00000007450579, y: 0.056309186, z: 0.0000000579364}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1042,7 +1042,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000019073488, y: 0.056309126, z: -0.0000000016682018}
+  m_ConnectedAnchor: {x: -6.835495e-15, y: 0.05630921, z: 0.00000003409452}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1117,7 +1117,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000019073488, y: 0.060967516, z: -0.000000018511791}
+  m_ConnectedAnchor: {x: 4.116838e-14, y: 0.060967427, z: -0.00000006023517}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1192,7 +1192,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000007897616, y: 0.0609675, z: 0.0000000053299978}
+  m_ConnectedAnchor: {x: -0.00000004470343, y: 0.060967386, z: -0.00000007811659}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1267,7 +1267,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000006258489, y: 0.060967665, z: 0.000000017250851}
+  m_ConnectedAnchor: {x: 0.000000005960483, y: 0.06096747, z: -0.000000024472374}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1342,7 +1342,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000745058, y: 0.060967553, z: 0.000000011290464}
+  m_ConnectedAnchor: {x: 0.00000006854535, y: 0.060967565, z: -0.000000006590933}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1417,7 +1417,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000191426, y: 0.060967546, z: 0.00000004705308}
+  m_ConnectedAnchor: {x: -6.9102646e-10, y: 0.060967393, z: -0.00000006619564}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1562,7 +1562,7 @@ GameObject:
   - component: {fileID: 1885134445}
   - component: {fileID: 2391368448991822985}
   m_Layer: 14
-  m_Name: IKenemy
+  m_Name: smallSpider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1577,7 +1577,7 @@ Transform:
   m_GameObject: {fileID: 7699500358902473459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 40.41864, y: 2, z: -17.823174}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7234880042129563469}
   - {fileID: 6521605136381100474}
@@ -1627,7 +1627,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   aggroDistance: 20
-  chaseSpeed: 10
+  chaseSpeed: 6
   wanderSpeed: 2
   wanderTimer: 2
   wanderRadius: 10
@@ -1752,8 +1752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39fbeabb366d74b40a536f4e786ec734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathForce: 200
-  deathRotation: 200
+  deathForce: 100
+  deathRotation: 100
   root: {fileID: 7234880042129563469}
 --- !u!114 &1885134452
 MonoBehaviour:
@@ -1841,7 +1841,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.29800034, y: -0.23900032, z: 0.25400162}
+  m_ConnectedAnchor: {x: -0.29800034, y: -0.23899996, z: 0.25400162}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1970,12 +1970,52 @@ PrefabInstance:
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: stepDistance
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: interpolationFramesCount
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].time
+      value: 0.5057324
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].value
+      value: 0.59901303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].inSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].inSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].inSlope
+      value: -1.2123408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].outSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].outSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].outSlope
+      value: -1.2123408
       objectReference: {fileID: 0}
     - target: {fileID: 5053317853962527146, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
@@ -2103,12 +2143,52 @@ PrefabInstance:
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: stepDistance
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: interpolationFramesCount
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].time
+      value: 0.5057324
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].value
+      value: 0.59901303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].inSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].inSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].inSlope
+      value: -1.2123408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].outSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].outSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].outSlope
+      value: -1.2123408
       objectReference: {fileID: 0}
     - target: {fileID: 5053317853962527146, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
@@ -2236,12 +2316,52 @@ PrefabInstance:
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: stepDistance
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: interpolationFramesCount
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].time
+      value: 0.5057324
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].value
+      value: 0.59901303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].inSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].inSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].inSlope
+      value: -1.2123408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].outSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].outSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].outSlope
+      value: -1.2123408
       objectReference: {fileID: 0}
     - target: {fileID: 5053317853962527146, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
@@ -2369,12 +2489,52 @@ PrefabInstance:
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: stepDistance
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: interpolationFramesCount
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].time
+      value: 0.5057324
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].value
+      value: 0.59901303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].inSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].inSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].inSlope
+      value: -1.2123408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].outSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].outSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].outSlope
+      value: -1.2123408
       objectReference: {fileID: 0}
     - target: {fileID: 5053317853962527146, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
@@ -2502,12 +2662,52 @@ PrefabInstance:
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: stepDistance
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: interpolationFramesCount
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].time
+      value: 0.5057324
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].value
+      value: 0.59901303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].inSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].inSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].inSlope
+      value: -1.2123408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].outSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].outSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].outSlope
+      value: -1.2123408
       objectReference: {fileID: 0}
     - target: {fileID: 5053317853962527146, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
@@ -2635,12 +2835,52 @@ PrefabInstance:
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: stepDistance
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}
       propertyPath: interpolationFramesCount
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].time
+      value: 0.5057324
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].value
+      value: 0.59901303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].inSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].inSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].inSlope
+      value: -1.2123408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[0].outSlope
+      value: 1.1844462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[1].outSlope
+      value: -0.013947308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713619596841119469, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
+        type: 3}
+      propertyPath: stepPath.m_Curve.Array.data[2].outSlope
+      value: -1.2123408
       objectReference: {fileID: 0}
     - target: {fileID: 5053317853962527146, guid: 0a7d7a271b3934f47a8e81e97cb5b663,
         type: 3}

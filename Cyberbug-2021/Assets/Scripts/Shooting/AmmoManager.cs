@@ -67,6 +67,7 @@ public class AmmoManager : MonoBehaviour{
         else{
             ammoInInventory = newAmmo;
         }
+        EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);
     }
     
     public void Fire(){

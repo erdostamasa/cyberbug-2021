@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour, IShootable{
     public void ReceiveProjectile(int damage){
         currentHealth -= damage;
         if (currentHealth <= 0){
+            GetComponent<LootDropper>().DropLoot();
             ragdoll.ToggleRagdoll(true);
         }
     }
