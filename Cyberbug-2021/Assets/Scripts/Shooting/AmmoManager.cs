@@ -8,6 +8,13 @@ public class AmmoManager : MonoBehaviour{
     [SerializeField] int ammoInInventory = 0;
     [SerializeField] int magazineSize;
     public int maxAmmoInventory = 999;
+    [SerializeField] private float reloadTime=1f;
+    private bool isReloading = false;
+    [SerializeField] Animator animator;
+    private void Start()
+    {
+        ammoLoaded = magazineSize;
+    }
 
     public int MagazineSize{
         set{
@@ -18,24 +25,38 @@ public class AmmoManager : MonoBehaviour{
     public int AmmoInInventory{
         get => ammoInInventory;
     }
-
+    
+    public bool IsReloding{
+        get => isReloading;
+    }
+    
     void Update(){
         //Debug.Log(ammoLoaded + "/" + ammoInInventory);
     }
 
     public int AmmoLoaded => ammoLoaded;
 
-    public void Reload(){
-        ammoInInventory += ammoLoaded;
-        if (ammoInInventory >= magazineSize){
-            ammoLoaded = magazineSize;
-            ammoInInventory -= magazineSize;
+    public IEnumerator Reload()
+    {
+        if ((ammoLoaded != magazineSize) && ammoInInventory!=0)
+        {
+            isReloading = true;
+            animator.SetBool("Reloading",true);
+            yield return new WaitForSeconds(reloadTime);
+            animator.SetBool("Reloading",false);
+            ammoInInventory += ammoLoaded;
+            if (ammoInInventory >= magazineSize){
+            
+                ammoLoaded = magazineSize;
+                ammoInInventory -= magazineSize;
+            }
+            else{
+                ammoLoaded = ammoInInventory;
+                ammoInInventory = 0;
+            }
+            isReloading = false;
+            EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);
         }
-        else{
-            ammoLoaded = ammoInInventory;
-            ammoInInventory = 0;
-        }
-        EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);
     }
 
     public void AddAmmo(int ammoToAdd){

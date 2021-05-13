@@ -39,17 +39,17 @@
  - [ ] Gránát dobása
  - [ ] Felhasználói felület
    - [x] Főmenü
-   - [ ] Pause menu
-   - [ ] Pálya kiválasztása
-   - [ ] HUD
+   - [X] Pause menu
+   - [X] Pálya kiválasztása
+   - [X] HUD
 
 ### Szimulációk:
  - [x] Unity rigidbody szimuláció
  - [x] Reszponzív mozgás
 
 ### Környezet:
- - [ ] Low poly modellek és környezet
- - [ ] Több pálya
+ - [X] Low poly modellek és környezet
+ - [X] Több pálya
    * Egyre nehezednek
  - [ ] Végtelen aréna egyre több/erősebb ellenféllel
  - [ ] Ellenségek
@@ -62,7 +62,7 @@
  * Animációk
    * Játékos
      - [ ] Lövés
-     - [ ] Újratöltés
+     - [X] Újratöltés
      - [ ] Fegyver váltás
      - [ ] Mozgás
      - [ ] Veszítés
