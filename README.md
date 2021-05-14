@@ -67,7 +67,7 @@
      - [x] Lövés
      - [x] Részecske effektek
  - [x] Robbanás
-   - [ ] Golyónyomok
+   - [x] Golyónyomok
 
 ### Extra funkciók:
  - [ ] Futás
