@@ -10,8 +10,6 @@ public class PickupAmmo : MonoBehaviour{
     AmmoManager shotgun;
     [SerializeField] Transform rifleT;
     AmmoManager rifle;
-    [SerializeField] Transform grenadeT;
-    AmmoManager grenade;
 
     [SerializeField] AudioClip pickupSound;
     
@@ -21,7 +19,6 @@ public class PickupAmmo : MonoBehaviour{
         pistol = pistolT.GetComponent<AmmoManager>();
         shotgun = shotgunT.GetComponent<AmmoManager>();
         rifle = rifleT.GetComponent<AmmoManager>();
-        grenade = grenadeT.GetComponent<AmmoManager>();
     }
 
     void OnTriggerEnter(Collider other){
@@ -36,9 +33,6 @@ public class PickupAmmo : MonoBehaviour{
                     break;
                 case "Rifle":
                     rifle.AddAmmo(1);
-                    break;
-                case "Greande":
-                    grenade.AddAmmo(1);
                     break;
                 default:
                     break;
