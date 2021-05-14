@@ -6551,21 +6551,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1805895795511378157, guid: eedc69d59696dd24789543425ca2b6d3,
-        type: 3}
-      propertyPath: aimingLayers.m_Bits
-      value: 17920
-      objectReference: {fileID: 0}
-    - target: {fileID: 1805895795511378157, guid: eedc69d59696dd24789543425ca2b6d3,
-        type: 3}
-      propertyPath: ignoreLayerWhenAiming.m_Bits
-      value: 106752
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035344518661888222, guid: eedc69d59696dd24789543425ca2b6d3,
-        type: 3}
-      propertyPath: aimingLayers.m_Bits
-      value: 17920
-      objectReference: {fileID: 0}
     - target: {fileID: 4458194982077606229, guid: eedc69d59696dd24789543425ca2b6d3,
         type: 3}
       propertyPath: m_RootOrder
@@ -6625,16 +6610,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4787470179894874902, guid: eedc69d59696dd24789543425ca2b6d3,
-        type: 3}
-      propertyPath: aimingLayers.m_Bits
-      value: 17920
-      objectReference: {fileID: 0}
-    - target: {fileID: 4787470179894874902, guid: eedc69d59696dd24789543425ca2b6d3,
-        type: 3}
-      propertyPath: ignoreLayerWhenAiming.m_Bits
-      value: 112944
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eedc69d59696dd24789543425ca2b6d3, type: 3}

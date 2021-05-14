@@ -52,10 +52,12 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 2691755617435897516}
   playerCamera: {fileID: 4458194982236941749}
-  ignoreLayerWhenAiming:
+  aimingLayers:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 17920
   muzzleFlash: {fileID: 2095035142468539816}
+  reloadSound: {fileID: 8300000, guid: f953fe6e6e9888d428e1ef0b37a3b6fe, type: 3}
+  reloadVolume: 0.5
   shootSound: {fileID: 8300000, guid: d6f761c43b8827a4ca8000368a2c8042, type: 3}
   visual: {fileID: 7171078008559949388}
   selected: 0
@@ -10535,10 +10537,12 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 152212448388878318}
   playerCamera: {fileID: 4458194982236941749}
-  ignoreLayerWhenAiming:
+  aimingLayers:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 17920
   muzzleFlash: {fileID: 3522929705426486042}
+  reloadSound: {fileID: 8300000, guid: 1e638cf79ffb3764bafe1b2996635a84, type: 3}
+  reloadVolume: 0.7
   shootSound: {fileID: 8300000, guid: a2d801c94b4332f42be5fd54351a0476, type: 3}
   visual: {fileID: 4950319020207774404}
   selected: 0
@@ -10922,10 +10926,12 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 0}
   playerCamera: {fileID: 4458194982236941749}
-  ignoreLayerWhenAiming:
+  aimingLayers:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 0
   muzzleFlash: {fileID: 0}
+  reloadSound: {fileID: 0}
+  reloadVolume: 0
   shootSound: {fileID: 0}
   visual: {fileID: 5085215117646096913}
   selected: 0
@@ -11001,10 +11007,12 @@ MonoBehaviour:
     type: 3}
   shootingPoint: {fileID: 5238702645158019459}
   playerCamera: {fileID: 4458194982236941749}
-  ignoreLayerWhenAiming:
+  aimingLayers:
     serializedVersion: 2
-    m_Bits: 129328
+    m_Bits: 17920
   muzzleFlash: {fileID: 2975941216344382181}
+  reloadSound: {fileID: 8300000, guid: 57de176ad5df23046b4827afeee0e15f, type: 3}
+  reloadVolume: 0.8
   shootSound: {fileID: 8300000, guid: d12f2318b1bf68741bd8852f2f49f48c, type: 3}
   visual: {fileID: 5055484472784602567}
   selected: 0
