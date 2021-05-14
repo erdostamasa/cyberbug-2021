@@ -18,6 +18,11 @@ public class EnemySpawner : MonoBehaviour{
 
     public List<Transform> spawnLocations;
 
+    [SerializeField] bool infiniteSpawn = true;
+
+    [SerializeField] bool timed = false;
+    
+
     void Awake(){
         EventManager.instance.onEnemyDied += decreaseEnemyCount;
     }
@@ -25,10 +30,20 @@ public class EnemySpawner : MonoBehaviour{
     void Start(){
         GetComponent<MeshRenderer>().enabled = false;
         //StartCoroutine(SpawnSpiders(5));
+        
+        SpawnSpiders(enemiesPerStage);
     }
 
+    float spawnTimer = 0;
+    [SerializeField] float timeToSpawn = 1f;
+    //[SerializeField] int spawnCount = 1;
     void Update(){
-        if (enemiesAlive == 0){
+        spawnTimer += Time.deltaTime;
+        if (timed && spawnTimer >= timeToSpawn && enemiesAlive < maxEnemies){
+            SpawnSpiders(1);
+            spawnTimer = 0;
+        }
+        if (infiniteSpawn && enemiesAlive == 0){
             NextStage();
         }
     }

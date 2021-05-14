@@ -26,13 +26,13 @@ public class PickupAmmo : MonoBehaviour{
             AmmoLoot ammo = other.gameObject.GetComponent<AmmoLoot>();
             switch (ammo.weapon){
                 case "Pistol":
-                    pistol.AddAmmo(1);
+                    pistol.AddAmmo(2);
                     break;
                 case "Shotgun":
-                    shotgun.AddAmmo(1);
+                    shotgun.AddAmmo(2);
                     break;
                 case "Rifle":
-                    rifle.AddAmmo(1);
+                    rifle.AddAmmo(4);
                     break;
                 default:
                     break;

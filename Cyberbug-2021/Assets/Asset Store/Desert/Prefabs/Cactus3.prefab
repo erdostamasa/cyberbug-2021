@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3357800}
   - component: {fileID: 2324206}
   - component: {fileID: 3931110811046140440}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: cactus3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,8 +124,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5626833, y: 1.1720929, z: 1.5525105}
-  m_Center: {x: 0, y: 0.58834016, z: 0.0000002682209}
+  m_Size: {x: 1.5626833, y: 18.037094, z: 1.5525105}
+  m_Center: {x: 0, y: 9.020842, z: 0.00000023841858}
 --- !u!1 &197264
 GameObject:
   m_ObjectHideFlags: 0

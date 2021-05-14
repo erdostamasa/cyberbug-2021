@@ -96,5 +96,8 @@ public class Gun : MonoBehaviour{
             ammo.Fire();
             audioPlayer.PlayOneShot(shootSound, Random.Range(0.23f, 0.26f));
         }
+        else{
+            StartCoroutine(ammo.Reload());
+        }
     }
 }
