@@ -3725,6 +3725,12 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &662791276 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6801184279761514988, guid: bbea365912f93a949a3564b72eb40b4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6801184278293426461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &667741518
 Mesh:
   m_ObjectHideFlags: 0
@@ -14023,6 +14029,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6801184279761514992, guid: bbea365912f93a949a3564b72eb40b4f,
+        type: 3}
+      propertyPath: spawnLocations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801184279761514992, guid: bbea365912f93a949a3564b72eb40b4f,
+        type: 3}
+      propertyPath: spawnLocations.Array.data[0]
+      value: 
+      objectReference: {fileID: 662791276}
     - target: {fileID: 6801184279761514993, guid: bbea365912f93a949a3564b72eb40b4f,
         type: 3}
       propertyPath: m_Name

@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour{
 
     bool playerInRange = false;
     public Status status;
+    public bool isOnnavmesh;
 
     Vector3 wanderTarget;
     public float wanderTimer = 1f;
@@ -39,6 +40,8 @@ public class EnemyAI : MonoBehaviour{
         wanderTarget = transform.position;
         timer = wanderTimer;
         timeToWander = wanderTimer;
+        chaseSpeed = Random.Range(chaseSpeed - 2f, chaseSpeed + 2f);
+        wanderSpeed = Random.Range(wanderSpeed - 1f, wanderSpeed + 1f);
     }
 
 
@@ -73,9 +76,10 @@ public class EnemyAI : MonoBehaviour{
 
     void CheckForPlayer(){
         float distance = (playerTransform.position - transform.position).magnitude;
+        isOnnavmesh = agent.isOnNavMesh;
         if (distance <= aggroDistance){
-            NavMeshPath p = new NavMeshPath();
-            if (agent.isOnNavMesh && agent.CalculatePath(playerTransform.position, p)){
+            //NavMeshPath p = new NavMeshPath();
+            if (agent.isOnNavMesh && NavMesh.SamplePosition(playerTransform.position, out var hit, 1f, NavMesh.AllAreas)){
                 status = Status.FOLLOWING;
             }
             else{
@@ -87,7 +91,13 @@ public class EnemyAI : MonoBehaviour{
         }
     }
 
+    float repathTimer = 0f;
+    float repathTime = 1f;
     void ChasePlayer(){
-        agent.SetDestination(playerTransform.position);
+        repathTimer += Time.deltaTime;
+        if (repathTimer >= repathTime){
+            agent.SetDestination(playerTransform.position);
+            repathTime = 0;
+        }
     }
 }

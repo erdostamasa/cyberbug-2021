@@ -56,14 +56,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17920
   muzzleFlash: {fileID: 2095035142468539816}
-  reloadSound: {fileID: 8300000, guid: f953fe6e6e9888d428e1ef0b37a3b6fe, type: 3}
-  reloadVolume: 0.5
   shootSound: {fileID: 8300000, guid: d6f761c43b8827a4ca8000368a2c8042, type: 3}
   visual: {fileID: 7171078008559949388}
   selected: 0
   timeBetweenShots: 0.4
-  randomSpread: 6
-  projectilePerShot: 12
+  randomSpread: 10
+  projectilePerShot: 10
 --- !u!114 &2493336327387375252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +80,9 @@ MonoBehaviour:
   reloadTime: 1.25
   animator: {fileID: 6280457579238048000}
   visual: {fileID: 7171078008559949388}
+  reloadSound: {fileID: 8300000, guid: f953fe6e6e9888d428e1ef0b37a3b6fe, type: 3}
+  reloadVolume: 0.5
+  audioPlayer: {fileID: 618059602}
 --- !u!82 &618059602
 AudioSource:
   m_ObjectHideFlags: 0
@@ -519,14 +520,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4458194982969350736}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458194981818919185}
   m_Father: {fileID: 4458194982077606229}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4458194982969350751
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10517,8 +10518,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17920
   muzzleFlash: {fileID: 3522929705426486042}
-  reloadSound: {fileID: 8300000, guid: 1e638cf79ffb3764bafe1b2996635a84, type: 3}
-  reloadVolume: 0.7
   shootSound: {fileID: 8300000, guid: a2d801c94b4332f42be5fd54351a0476, type: 3}
   visual: {fileID: 4950319020207774404}
   selected: 0
@@ -10543,6 +10542,9 @@ MonoBehaviour:
   reloadTime: 1
   animator: {fileID: 6280457579238048000}
   visual: {fileID: 4950319020207774404}
+  reloadSound: {fileID: 8300000, guid: 1e638cf79ffb3764bafe1b2996635a84, type: 3}
+  reloadVolume: 0.8
+  audioPlayer: {fileID: 687324122}
 --- !u!82 &687324122
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10665,14 +10667,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6946706964125655508}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalRotation: {x: -0, y: -0.97429085, z: -0, w: 0.22529389}
+  m_LocalPosition: {x: 0.92562485, y: 1.8000002, z: 1.3562717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458194982236941749}
   m_Father: {fileID: 4458194982077606229}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -153.96, z: 0}
 --- !u!20 &9148329282919502984
 Camera:
   m_ObjectHideFlags: 0
@@ -11005,8 +11007,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   muzzleFlash: {fileID: 0}
-  reloadSound: {fileID: 0}
-  reloadVolume: 0
   shootSound: {fileID: 0}
   visual: {fileID: 5085215117646096913}
   selected: 0
@@ -11031,6 +11031,9 @@ MonoBehaviour:
   reloadTime: 1
   animator: {fileID: 0}
   visual: {fileID: 5085215117646096913}
+  reloadSound: {fileID: 0}
+  reloadVolume: 0
+  audioPlayer: {fileID: 0}
 --- !u!1 &8775803595843394176
 GameObject:
   m_ObjectHideFlags: 0
@@ -11086,8 +11089,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17920
   muzzleFlash: {fileID: 2975941216344382181}
-  reloadSound: {fileID: 8300000, guid: 57de176ad5df23046b4827afeee0e15f, type: 3}
-  reloadVolume: 0.8
   shootSound: {fileID: 8300000, guid: d12f2318b1bf68741bd8852f2f49f48c, type: 3}
   visual: {fileID: 5055484472784602567}
   selected: 0
@@ -11109,9 +11110,12 @@ MonoBehaviour:
   ammoInInventory: 60
   magazineSize: 6
   maxAmmoInventory: 60
-  reloadTime: 0.75
+  reloadTime: 0.5
   animator: {fileID: 6280457579238048000}
   visual: {fileID: 5055484472784602567}
+  reloadSound: {fileID: 8300000, guid: 57de176ad5df23046b4827afeee0e15f, type: 3}
+  reloadVolume: 0.7
+  audioPlayer: {fileID: 120628570}
 --- !u!82 &120628570
 AudioSource:
   m_ObjectHideFlags: 0
