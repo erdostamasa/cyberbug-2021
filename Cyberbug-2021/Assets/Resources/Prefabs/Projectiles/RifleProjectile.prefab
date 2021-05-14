@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5504825563956262584}
   - component: {fileID: 6915244820203572509}
   m_Layer: 13
-  m_Name: Projectile
+  m_Name: RifleProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,12 +95,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 41216
+    m_Bits: 368896
   timeout: 10
-  speed: 250
-  explosionRadius: 5
+  speed: 200
+  explosionRadius: 3
   explosionForce: 5
-  bulletForce: 20
+  bulletForce: 10
   forceFalloff:
     serializedVersion: 2
     m_Curve:
@@ -125,6 +125,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  damage: 2
 --- !u!96 &6915244820203572509
 TrailRenderer:
   serializedVersion: 2

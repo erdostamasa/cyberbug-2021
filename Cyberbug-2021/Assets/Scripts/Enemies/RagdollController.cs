@@ -29,9 +29,8 @@ public class RagdollController : MonoBehaviour{
     public void ToggleRagdoll(bool ragdollActive){
         GetComponent<NavMeshAgent>().enabled = !ragdollActive;
         GetComponent<EnemyAI>().enabled = !ragdollActive;
-        GetComponent<AudioSource>().enabled = !ragdollActive;
 
-        
+
         foreach (FastIKFabric child in childrenIK){
             child.enabled = !ragdollActive;
         }

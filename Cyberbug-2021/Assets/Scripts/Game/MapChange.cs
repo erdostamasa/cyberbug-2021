@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MapChange : MonoBehaviour
-{
-    void OnTriggerEnter(Collider other)
-    {
-        EventManager.instance.MapChanged(true);
+public class MapChange : MonoBehaviour{
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("Player")){
+            EventManager.instance.MapChanged(true);
+        }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        EventManager.instance.MapChanged(false);
+    void OnTriggerExit(Collider other){
+        if (other.gameObject.CompareTag("Player")){
+            EventManager.instance.MapChanged(false);
+        }
     }
 }
