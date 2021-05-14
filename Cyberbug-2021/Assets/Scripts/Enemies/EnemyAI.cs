@@ -3,9 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour{
+    public enum Status{
+        WANDERING,
+        FOLLOWING,
+        OBSTSRUCTED
+    }
+
     public NavMeshAgent agent;
     public Transform playerTransform;
     public LayerMask walkableLayer, playerLayer;
@@ -13,9 +19,9 @@ public class EnemyAI : MonoBehaviour{
 
     public float chaseSpeed = 4;
     public float wanderSpeed = 2;
-    
+
     bool playerInRange = false;
-    
+    public Status status;
 
     Vector3 wanderTarget;
     public float wanderTimer = 1f;
@@ -29,39 +35,38 @@ public class EnemyAI : MonoBehaviour{
     }
 
     void Start(){
-        InvokeRepeating(nameof(CheckForPlayer), 0f, 1f);
+        InvokeRepeating(nameof(CheckForPlayer), 0f, Random.Range(1f, 2f));
         wanderTarget = transform.position;
         timer = wanderTimer;
         timeToWander = wanderTimer;
     }
 
+
     void Update(){
-        if (playerInRange){
-            ChasePlayer();
-        }
-        else{
-            Wander();
+        switch (status){
+            case Status.FOLLOWING:
+                agent.speed = chaseSpeed;
+                ChasePlayer();
+                break;
+            case Status.OBSTSRUCTED:
+                agent.speed = chaseSpeed;
+                Wander();
+                break;
+            case Status.WANDERING:
+                agent.speed = wanderSpeed;
+                Wander();
+                break;
         }
     }
 
 
     void Wander(){
         timer += Time.deltaTime;
-
         if (timer >= timeToWander){
             timeToWander = UnityEngine.Random.Range(wanderTimer - 0.5f, wanderTimer + 0.5f);
             Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * wanderRadius;
             randomDirection += transform.position;
-            //Debug.Log(randomDirection);
-
-            /*NavMeshHit navHit;
-            NavMesh.SamplePosition(randomDirection, out navHit, 2f, -1);
-            wanderTarget = navHit.position;*/
-
-
-            //Debug.Log(wanderTarget);
             agent.SetDestination(randomDirection);
-
             timer = 0;
         }
     }
@@ -69,12 +74,16 @@ public class EnemyAI : MonoBehaviour{
     void CheckForPlayer(){
         float distance = (playerTransform.position - transform.position).magnitude;
         if (distance <= aggroDistance){
-            playerInRange = true;
-            agent.speed = chaseSpeed;
+            NavMeshPath p = new NavMeshPath();
+            if (agent.isOnNavMesh && agent.CalculatePath(playerTransform.position, p)){
+                status = Status.FOLLOWING;
+            }
+            else{
+                status = Status.OBSTSRUCTED;
+            }
         }
         else{
-            playerInRange = false;
-            agent.speed = wanderSpeed;
+            status = Status.WANDERING;
         }
     }
 

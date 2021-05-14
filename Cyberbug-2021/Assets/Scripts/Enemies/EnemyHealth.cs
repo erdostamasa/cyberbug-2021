@@ -13,7 +13,8 @@ public class EnemyHealth : MonoBehaviour, IShootable{
     ParticleSystem ps;
     
     int currentHealth;
-
+    bool dead = false;
+    
     public int Health => currentHealth;
 
     public int MaxHealth{
@@ -30,10 +31,13 @@ public class EnemyHealth : MonoBehaviour, IShootable{
     }
 
     public void ReceiveProjectile(int damage){
+        if (dead) return;
         currentHealth -= damage;
         if (currentHealth <= 0){
+            dead = true;
             GetComponent<LootDropper>().DropLoot();
             ragdoll.ToggleRagdoll(true);
+            EventManager.instance.EnemyDied();
             Invoke(nameof(ExplodeSelf), explodeDelay);
         }
     }

@@ -6388,7 +6388,7 @@ GameObject:
   - component: {fileID: 1885134445}
   - component: {fileID: 2391368448991822985}
   m_Layer: 14
-  m_Name: IKenemy
+  m_Name: spiderEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6424,7 +6424,7 @@ NavMeshAgent:
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 180
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -6452,11 +6452,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  aggroDistance: 20
-  chaseSpeed: 10
-  wanderSpeed: 2
+  aggroDistance: 50
+  chaseSpeed: 8
+  wanderSpeed: 4
   wanderTimer: 2
-  wanderRadius: 10
+  wanderRadius: 20
 --- !u!82 &1684526408
 AudioSource:
   m_ObjectHideFlags: 0

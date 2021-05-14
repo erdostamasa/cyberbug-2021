@@ -12,6 +12,11 @@ public class EventManager : MonoBehaviour{
         instance = this;
     }
 
+    public event Action onEnemyDied;
+    public void EnemyDied(){
+        onEnemyDied?.Invoke();
+    }
+    
     public event Action<int> onPlayerHealthChanged;
     public void PlayerHealthChanged(int newHealth){
         onPlayerHealthChanged?.Invoke(newHealth);
