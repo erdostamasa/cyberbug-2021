@@ -11,10 +11,10 @@ public class EnemyHealth : MonoBehaviour, IShootable{
     [SerializeField] GameObject particleObject;
     [SerializeField] AudioClip explosionSound;
     ParticleSystem ps;
-    
+
     int currentHealth;
     bool dead = false;
-    
+
     public int Health => currentHealth;
 
     public int MaxHealth{
@@ -27,7 +27,9 @@ public class EnemyHealth : MonoBehaviour, IShootable{
 
     void Start(){
         currentHealth = maxHealth;
-        ps = particleObject.GetComponent<ParticleSystem>();
+        if (particleObject != null){
+            ps = particleObject.GetComponent<ParticleSystem>();
+        }
     }
 
     public void ReceiveProjectile(int damage){

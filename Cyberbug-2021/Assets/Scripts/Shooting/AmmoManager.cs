@@ -77,8 +77,8 @@ public class AmmoManager : MonoBehaviour{
         else{
             ammoInInventory = newAmmo;
         }
-
-        if (visual.activeSelf){
+ 
+        if (visual != null && visual.activeSelf){
             EventManager.instance.AmmoChanged(ammoLoaded, ammoInInventory);    
         }
     }
