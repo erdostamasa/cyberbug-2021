@@ -62961,6 +62961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 9002592351075941809, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d77dc81b055df4e4abc9aa88b2418b2a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eedc69d59696dd24789543425ca2b6d3, type: 3}
 --- !u!43 &1075515033
