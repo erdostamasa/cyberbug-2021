@@ -34,10 +34,9 @@
  - [x] Mozgás
  - [x] Ugrás
  - [x] Lövés fegyverrel
- - [ ] Fegyver újratöltése
+ - [x] Fegyver újratöltése
  - [x] Fegyverek váltása
- - [ ] Gránát dobása
- - [ ] Felhasználói felület
+ - [x] Felhasználói felület
    - [x] Főmenü
    - [X] Pause menu
    - [X] Pálya kiválasztása
@@ -51,26 +50,23 @@
  - [X] Low poly modellek és környezet
  - [X] Több pálya
    * Egyre nehezednek
- - [ ] Végtelen aréna egyre több/erősebb ellenféllel
- - [ ] Ellenségek
+ - [x] Végtelen aréna egyre több/erősebb ellenféllel
+ - [x] Ellenségek
    - [x] Követik a játékos pozícióját
-   - [ ] Céloznak és lőnek a játékosra
-   - [ ] Lőszert és gránátot dobnak ha elpusztulnak
- - [ ] Elpusztítható dobozokból lőszer esik
+   - [x] Céloznak és sebzik a játékost
+   - [x] Lőszert dobnak ha elpusztulnak
 
 ### Grafika, kinézet:
  * Animációk
    * Játékos
-     - [ ] Lövés
+     - [X] Lövés
      - [X] Újratöltés
-     - [ ] Fegyver váltás
-     - [ ] Mozgás
-     - [ ] Veszítés
+     - [X] Mozgás
    * Ellenségek
      - [x] Mozgás
-     - [ ] Lövés
-     - [ ] Részecske effektek
- - [ ] Robbanás
+     - [x] Lövés
+     - [x] Részecske effektek
+ - [x] Robbanás
    - [ ] Golyónyomok
 
 ### Extra funkciók:
