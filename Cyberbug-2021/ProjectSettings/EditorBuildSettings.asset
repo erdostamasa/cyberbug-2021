@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Planet_2_(desert).unity
     guid: 2a3ff4d8b5588954d951dbc91b987fcf
   - enabled: 1
+    path: Assets/Scenes/Planet_3.unity
+    guid: 579484d85e617ee4a9b4058cb719b46d
+  - enabled: 1
     path: Assets/Scenes/IK_testing.unity
     guid: 6d04c2ff1ac99e14d93a3c25b2364f9c
   m_configObjects:
