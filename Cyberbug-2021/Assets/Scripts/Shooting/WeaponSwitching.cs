@@ -55,10 +55,6 @@ public class WeaponSwitching : MonoBehaviour
             SwitchWeapon(2);
             EventManager.instance.WeaponSwitched(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4)){
-            SwitchWeapon(3);
-            EventManager.instance.WeaponSwitched(3);
-        }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
