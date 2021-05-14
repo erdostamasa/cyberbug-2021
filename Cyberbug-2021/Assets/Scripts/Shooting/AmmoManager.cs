@@ -13,6 +13,11 @@ public class AmmoManager : MonoBehaviour{
     [SerializeField] Animator animator;
     [SerializeField] GameObject visual;
     
+    [SerializeField] AudioClip reloadSound;
+    [SerializeField] float reloadVolume;
+    
+    [SerializeField] AudioSource audioPlayer;
+    
     private void Start()
     {
         ammoLoaded = magazineSize;
@@ -45,6 +50,7 @@ public class AmmoManager : MonoBehaviour{
             isReloading = true;
             WeaponSwitching.instance.isReloading = true;
             animator.SetBool("Reloading",true);
+            audioPlayer.PlayOneShot(reloadSound, reloadVolume);
             yield return new WaitForSeconds(reloadTime);
             animator.SetBool("Reloading",false);
             ammoInInventory += ammoLoaded;

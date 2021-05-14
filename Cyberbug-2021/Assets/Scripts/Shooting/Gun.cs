@@ -12,8 +12,6 @@ public class Gun : MonoBehaviour{
     [SerializeField] ParticleSystem muzzleFlash;
 
 
-    [SerializeField] AudioClip reloadSound;
-    [SerializeField] float reloadVolume;
     [SerializeField] AudioClip shootSound;
     AudioSource audioPlayer;
     public GameObject visual;
@@ -62,7 +60,6 @@ public class Gun : MonoBehaviour{
 
         if (Input.GetKeyDown(KeyCode.R)){
             StartCoroutine(ammo.Reload());
-            audioPlayer.PlayOneShot(reloadSound, reloadVolume);
         }
     }
 
