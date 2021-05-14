@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Respawn : MonoBehaviour
-{
-    [SerializeField] AudioSource death;
-    // Start is called before the first frame update
-    IEnumerator OnTriggerEnter(Collider other)
-    {
-        death.Play();
-        yield return new WaitForSeconds(0.9f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+public class Respawn : MonoBehaviour{
+    void OnTriggerEnter(Collider other){
+        if (other.CompareTag("Player")){
+            other.gameObject.GetComponent<PlayerHealth>().ReceiveProjectile(9999);
+        }
     }
 }
