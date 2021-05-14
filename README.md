@@ -76,6 +76,6 @@
  - [ ] Mozgó / forgó platformok
  - [x] Procedurális animáció inverz kinematikával
  - [ ] Pénz / bolt rendszer
- - [ ] Pont / highscore rendszer
+ - [X] Pont / highscore rendszer
  - [ ] Kooperatív többjátékos mód
  - [ ] Játékos játékos ellen többjátékos mód
