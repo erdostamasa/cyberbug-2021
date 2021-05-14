@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     [Header("Setup")] [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform shootingPoint;
     [SerializeField] Transform playerCamera;
-    [SerializeField] LayerMask ignoreLayerWhenAiming;
+    [SerializeField] LayerMask aimingLayers;
     [SerializeField] ParticleSystem muzzleFlash;
 
     [SerializeField] AudioClip shootSound;
@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
     Vector3 targetPoint;
 
     void OrientBullet(){
-        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 100f, ~ignoreLayerWhenAiming)){
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 100f, aimingLayers)){
             targetPoint = hit.point;
         }
         else{

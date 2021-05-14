@@ -60,8 +60,8 @@ MonoBehaviour:
   visual: {fileID: 7171078008559949388}
   selected: 0
   timeBetweenShots: 0.4
-  randomSpread: 8
-  projectilePerShot: 10
+  randomSpread: 6
+  projectilePerShot: 12
 --- !u!114 &2493336327387375252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11003,13 +11003,13 @@ MonoBehaviour:
   playerCamera: {fileID: 4458194982236941749}
   ignoreLayerWhenAiming:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 129328
   muzzleFlash: {fileID: 2975941216344382181}
   shootSound: {fileID: 8300000, guid: d12f2318b1bf68741bd8852f2f49f48c, type: 3}
   visual: {fileID: 5055484472784602567}
   selected: 0
   timeBetweenShots: 0.5
-  randomSpread: 1
+  randomSpread: 0
   projectilePerShot: 1
 --- !u!114 &7145416203576739780
 MonoBehaviour:
