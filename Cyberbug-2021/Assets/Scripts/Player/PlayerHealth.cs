@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IShootable{
 
+    [SerializeField] int maxHealth = 100;
     int currentHealth = 100;
     [SerializeField] AudioClip deathSound;
     
@@ -15,6 +16,14 @@ public class PlayerHealth : MonoBehaviour, IShootable{
         if (Input.GetKeyDown(KeyCode.L)){
             ReceiveProjectile(10);
         }
+    }
+
+    public void Heal(int amount){
+        currentHealth += amount;
+        if (currentHealth > maxHealth){
+            currentHealth = maxHealth;
+        }
+        EventManager.instance.PlayerHealthChanged(currentHealth);
     }
 
     public void ReceiveProjectile(int damage){

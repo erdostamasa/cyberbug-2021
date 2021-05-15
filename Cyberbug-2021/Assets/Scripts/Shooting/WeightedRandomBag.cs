@@ -9,7 +9,7 @@ class WeightedRandomBag<T>{
 
     List<Entry> entries = new List<Entry>();
     float accumulatedWeight;
-    Random rand = new Random();
+    Random rand = new Random(UnityEngine.Random.Range(0, 1000));
 
     public void AddEntry(T item, float weight){
         accumulatedWeight += weight;

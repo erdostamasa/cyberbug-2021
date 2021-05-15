@@ -11,6 +11,9 @@ public class PickupAmmo : MonoBehaviour{
     [SerializeField] Transform rifleT;
     AmmoManager rifle;
 
+    [SerializeField] PlayerHealth healthManager;
+    
+    [SerializeField] AudioClip hpSound;
     [SerializeField] AudioClip pickupSound;
     
     
@@ -24,21 +27,29 @@ public class PickupAmmo : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if (other.CompareTag("AmmoLoot")){
             AmmoLoot ammo = other.gameObject.GetComponent<AmmoLoot>();
+            AudioClip chosenClip = null;
             switch (ammo.weapon){
                 case "Pistol":
                     pistol.AddAmmo(2);
+                    chosenClip = pickupSound;
                     break;
                 case "Shotgun":
                     shotgun.AddAmmo(2);
+                    chosenClip = pickupSound;
                     break;
                 case "Rifle":
                     rifle.AddAmmo(4);
+                    chosenClip = pickupSound;
+                    break;
+                case "HP":
+                    healthManager.Heal(10);
+                    chosenClip = hpSound;
                     break;
                 default:
                     break;
             }
             Destroy(other.gameObject);
-            AudioSource.PlayClipAtPoint(pickupSound, transform.position, 0.2f);
+            AudioSource.PlayClipAtPoint(chosenClip, transform.position, 0.2f);
         }
     }
 }

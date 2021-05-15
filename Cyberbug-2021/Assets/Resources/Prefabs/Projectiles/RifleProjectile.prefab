@@ -97,7 +97,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 368896
   timeout: 10
-  speed: 200
+  speed: 400
   explosionRadius: 3
   explosionForce: 5
   bulletForce: 10
@@ -125,7 +125,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damage: 2
+  damage: 1
 --- !u!96 &6915244820203572509
 TrailRenderer:
   serializedVersion: 2
