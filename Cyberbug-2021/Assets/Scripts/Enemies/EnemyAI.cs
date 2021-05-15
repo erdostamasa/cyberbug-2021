@@ -31,6 +31,10 @@ public class EnemyAI : MonoBehaviour{
     float timeToWander;
     float timer;
 
+
+    bool seenPlayer = false;
+    Vector3 lastKnownPlayerPosition;
+
     void Awake(){
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
     }
@@ -48,12 +52,21 @@ public class EnemyAI : MonoBehaviour{
     void Update(){
         switch (status){
             case Status.FOLLOWING:
+                lastKnownPlayerPosition = playerTransform.position;
                 agent.speed = chaseSpeed;
-                ChasePlayer();
+                ChasePlayer(playerTransform.position);
+                seenPlayer = true;
                 break;
             case Status.OBSTSRUCTED:
                 agent.speed = chaseSpeed;
-                Wander();
+                float distanceToTarget = (lastKnownPlayerPosition - transform.position).magnitude;
+                if (distanceToTarget <= 2f){
+                    status = Status.WANDERING;
+                }
+                else{
+                    ChasePlayer(lastKnownPlayerPosition);    
+                }
+                //Wander();
                 break;
             case Status.WANDERING:
                 agent.speed = wanderSpeed;
@@ -79,7 +92,7 @@ public class EnemyAI : MonoBehaviour{
         isOnnavmesh = agent.isOnNavMesh;
         if (distance <= aggroDistance){
             //NavMeshPath p = new NavMeshPath();
-            if (agent.isOnNavMesh && NavMesh.SamplePosition(playerTransform.position, out var hit, 1f, NavMesh.AllAreas)){
+            if (agent.isOnNavMesh && NavMesh.SamplePosition(playerTransform.position, out var hit, 4f, NavMesh.AllAreas)){
                 status = Status.FOLLOWING;
             }
             else{
@@ -93,10 +106,10 @@ public class EnemyAI : MonoBehaviour{
 
     float repathTimer = 0f;
     float repathTime = 1f;
-    void ChasePlayer(){
+    void ChasePlayer(Vector3 destination){
         repathTimer += Time.deltaTime;
         if (repathTimer >= repathTime){
-            agent.SetDestination(playerTransform.position);
+            agent.SetDestination(destination);
             repathTime = 0;
         }
     }
