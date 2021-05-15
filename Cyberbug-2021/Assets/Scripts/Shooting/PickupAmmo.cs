@@ -38,7 +38,7 @@ public class PickupAmmo : MonoBehaviour{
                     chosenClip = pickupSound;
                     break;
                 case "Rifle":
-                    rifle.AddAmmo(4);
+                    rifle.AddAmmo(6);
                     chosenClip = pickupSound;
                     break;
                 case "HP":

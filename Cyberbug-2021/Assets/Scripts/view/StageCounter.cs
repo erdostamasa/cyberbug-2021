@@ -10,11 +10,9 @@ public class StageCounter : MonoBehaviour{
 
     void Awake(){
         text = GetComponent<TextMeshProUGUI>();
-    }
-
-    void Start(){
         EventManager.instance.onStageCompleted += UpdateText;
     }
+    
 
     void UpdateText(int stage){
         text.text = stage.ToString();

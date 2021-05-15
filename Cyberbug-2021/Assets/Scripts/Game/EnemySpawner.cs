@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour{
     [SerializeField] GameObject spiderPrefab;
     int enemiesAlive = 0;
-    int stage = 0;
+    int stage = 1;
 
     bool startingStage = false;
     
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour{
     void Start(){
         GetComponent<MeshRenderer>().enabled = false;
         //StartCoroutine(SpawnSpiders(5));
-        
+        EventManager.instance.StageCompleted(stage);
         SpawnSpiders(enemiesPerStage);
     }
 
@@ -51,13 +51,14 @@ public class EnemySpawner : MonoBehaviour{
     float timer = 0;
     float stageCooldown = 1f;
     void NextStage(){
-        EventManager.instance.StageCompleted(stage);
+        
         timer += Time.deltaTime;
         if (timer >= stageCooldown){
             SpawnSpiders(enemiesPerStage * stage);
             stage++;
             timer = 0;
         }
+        EventManager.instance.StageCompleted(stage);
     }
     
     void decreaseEnemyCount(){

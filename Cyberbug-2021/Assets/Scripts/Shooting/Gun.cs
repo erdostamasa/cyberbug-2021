@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour{
 
 
     [SerializeField] AudioClip shootSound;
+    [SerializeField] float shootVolume = 0.5f;
+    
     AudioSource audioPlayer;
     public GameObject visual;
     public bool selected = false;
@@ -94,7 +96,7 @@ public class Gun : MonoBehaviour{
             }
 
             ammo.Fire();
-            audioPlayer.PlayOneShot(shootSound, Random.Range(0.23f, 0.26f));
+            audioPlayer.PlayOneShot(shootSound, Random.Range(shootVolume -0.05f, shootVolume + 0.05f));
         }
         else{
             StartCoroutine(ammo.Reload());
