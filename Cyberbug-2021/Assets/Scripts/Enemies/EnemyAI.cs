@@ -44,7 +44,7 @@ public class EnemyAI : MonoBehaviour{
         wanderTarget = transform.position;
         timer = wanderTimer;
         timeToWander = wanderTimer;
-        chaseSpeed = Random.Range(chaseSpeed - 2f, chaseSpeed + 2f);
+        chaseSpeed = Random.Range(chaseSpeed - 1f, chaseSpeed + 1f);
         wanderSpeed = Random.Range(wanderSpeed - 1f, wanderSpeed + 1f);
     }
 

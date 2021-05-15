@@ -42,7 +42,7 @@ public class EndGame : MonoBehaviour
             blackScreen.SetActive(true);
             Time.timeScale = 0f;
             playerLook.SetActive(false);
-            AudioSource.PlayClipAtPoint(soundClip, transform.position);
+            AudioSource.PlayClipAtPoint(soundClip, transform.position, 1f);
         }
     }
 }
