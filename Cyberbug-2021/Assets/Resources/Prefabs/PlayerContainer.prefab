@@ -57,10 +57,11 @@ MonoBehaviour:
     m_Bits: 17920
   muzzleFlash: {fileID: 2095035142468539816}
   shootSound: {fileID: 8300000, guid: d6f761c43b8827a4ca8000368a2c8042, type: 3}
+  shootVolume: 0.65
   visual: {fileID: 7171078008559949388}
   selected: 0
   timeBetweenShots: 0.4
-  randomSpread: 10
+  randomSpread: 12
   projectilePerShot: 10
 --- !u!114 &2493336327387375252
 MonoBehaviour:
@@ -74,10 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b4453a1588ad645b0271d7a70c2969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoInInventory: 200
-  magazineSize: 10
+  ammoInInventory: 40
+  magazineSize: 8
   maxAmmoInventory: 200
-  reloadTime: 1.25
+  reloadTime: 1.75
   animator: {fileID: 6280457579238048000}
   visual: {fileID: 7171078008559949388}
   reloadSound: {fileID: 8300000, guid: f953fe6e6e9888d428e1ef0b37a3b6fe, type: 3}
@@ -661,6 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e083fa07da9998b4190e6144b73a1c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  deathSound: {fileID: 8300000, guid: d77dc81b055df4e4abc9aa88b2418b2a, type: 3}
 --- !u!114 &1526102951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +679,8 @@ MonoBehaviour:
   pistolT: {fileID: 491197452501099305}
   shotgunT: {fileID: 5751247305390645805}
   rifleT: {fileID: 2865648946898129518}
-  grenadeT: {fileID: 0}
+  healthManager: {fileID: 9002592351075941809}
+  hpSound: {fileID: 8300000, guid: 8619ee43597f9a64aab6b6a9b324a27a, type: 3}
   pickupSound: {fileID: 8300000, guid: a4c13f2ed337c284fa37c52a75ecb20e, type: 3}
 --- !u!1 &5375829723798405551
 GameObject:
@@ -10518,11 +10522,12 @@ MonoBehaviour:
     m_Bits: 17920
   muzzleFlash: {fileID: 3522929705426486042}
   shootSound: {fileID: 8300000, guid: a2d801c94b4332f42be5fd54351a0476, type: 3}
+  shootVolume: 0.5
   visual: {fileID: 4950319020207774404}
   selected: 0
-  timeBetweenShots: 0.075
+  timeBetweenShots: 0.05
   randomSpread: 2
-  projectilePerShot: 1
+  projectilePerShot: 2
 --- !u!114 &8759914236964497763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10535,10 +10540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b4453a1588ad645b0271d7a70c2969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoInInventory: 600
+  ammoInInventory: 120
   magazineSize: 60
-  maxAmmoInventory: 600
-  reloadTime: 1
+  maxAmmoInventory: 300
+  reloadTime: 2
   animator: {fileID: 6280457579238048000}
   visual: {fileID: 4950319020207774404}
   reloadSound: {fileID: 8300000, guid: 1e638cf79ffb3764bafe1b2996635a84, type: 3}
@@ -11009,10 +11014,11 @@ MonoBehaviour:
     m_Bits: 17920
   muzzleFlash: {fileID: 2975941216344382181}
   shootSound: {fileID: 8300000, guid: d12f2318b1bf68741bd8852f2f49f48c, type: 3}
+  shootVolume: 0.8
   visual: {fileID: 5055484472784602567}
   selected: 0
-  timeBetweenShots: 0.5
-  randomSpread: 0
+  timeBetweenShots: 0.3
+  randomSpread: 0.5
   projectilePerShot: 1
 --- !u!114 &7145416203576739780
 MonoBehaviour:
