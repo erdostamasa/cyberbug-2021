@@ -30,15 +30,15 @@ public class PickupAmmo : MonoBehaviour{
             AudioClip chosenClip = null;
             switch (ammo.weapon){
                 case "Pistol":
-                    pistol.AddAmmo(2);
+                    pistol.AddAmmo(3);
                     chosenClip = pickupSound;
                     break;
                 case "Shotgun":
-                    shotgun.AddAmmo(2);
+                    shotgun.AddAmmo(1);
                     chosenClip = pickupSound;
                     break;
                 case "Rifle":
-                    rifle.AddAmmo(6);
+                    rifle.AddAmmo(10);
                     chosenClip = pickupSound;
                     break;
                 case "HP":

@@ -25,9 +25,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(3);
     }
     
-    public void StartArena()
+    public void StartArena1()
     {
         SceneManager.LoadScene(4);
+    }
+    
+    public void StartArena2()
+    {
+        SceneManager.LoadScene(5);
     }
 
 }

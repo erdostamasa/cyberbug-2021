@@ -6452,7 +6452,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   aggroDistance: 50
-  chaseSpeed: 9.5
+  chaseSpeed: 9
   wanderSpeed: 4
   status: 0
   isOnnavmesh: 0

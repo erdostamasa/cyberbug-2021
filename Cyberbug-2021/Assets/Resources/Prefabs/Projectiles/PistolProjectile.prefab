@@ -100,7 +100,7 @@ MonoBehaviour:
   speed: 150
   explosionRadius: 5
   explosionForce: 5
-  bulletForce: 20
+  bulletForce: 25
   forceFalloff:
     serializedVersion: 2
     m_Curve:
@@ -125,7 +125,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damage: 3
+  damage: 4
 --- !u!96 &6915244820203572509
 TrailRenderer:
   serializedVersion: 2
