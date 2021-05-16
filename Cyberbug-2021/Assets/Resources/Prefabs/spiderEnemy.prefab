@@ -6536,13 +6536,13 @@ MonoBehaviour:
   lootTable:
   - lootObject: {fileID: 3699686862458597796, guid: d6d863e754c24b347895b204d28960b7,
       type: 3}
-    weight: 30
+    weight: 20
   - lootObject: {fileID: 7508957725417090351, guid: 13305069993fecb4ba22d7b786d0a05a,
       type: 3}
     weight: 30
   - lootObject: {fileID: 8883496001015156839, guid: ed55d3e04745817419301994a29e4d5a,
       type: 3}
-    weight: 35
+    weight: 38
   - lootObject: {fileID: 5626477596424832508, guid: 4c17f45e3650f5e40a019e446a9f15b3,
       type: 3}
     weight: 5
