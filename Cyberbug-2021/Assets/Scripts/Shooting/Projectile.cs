@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour{
             if(other != null) other.ReceiveProjectile(damage);
             Destroy(this.gameObject);
             
-            //BulletImpact(hit);
+            BulletImpact(hit);
             Explosion(hit.point);
         }
 
@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour{
             var body = collider.GetComponent<Rigidbody>();
 
             // Object can be pushed 
-            if (body != null){
+            if (!collider.CompareTag("Player") && body != null){
                 var distance = (collider.transform.position - contactPoint).magnitude;
                 var direction = (collider.transform.position - contactPoint).normalized;
                 var forceMultiplier = forceFalloff.Evaluate(distance / explosionRadius);

@@ -99,8 +99,8 @@ MonoBehaviour:
   timeout: 10
   speed: 150
   explosionRadius: 5
-  explosionForce: 5
-  bulletForce: 25
+  explosionForce: 6
+  bulletForce: 30
   forceFalloff:
     serializedVersion: 2
     m_Curve:

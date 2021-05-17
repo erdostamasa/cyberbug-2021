@@ -10540,8 +10540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b4453a1588ad645b0271d7a70c2969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoInInventory: 80
-  magazineSize: 80
+  ammoInInventory: 0
+  magazineSize: 100
   maxAmmoInventory: 400
   reloadTime: 2
   animator: {fileID: 6280457579238048000}

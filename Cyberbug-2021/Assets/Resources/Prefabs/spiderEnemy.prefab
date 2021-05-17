@@ -6503,6 +6503,7 @@ MonoBehaviour:
   explodeDelay: 5
   particleObject: {fileID: 4810069118801388662}
   explosionSound: {fileID: 8300000, guid: 897228709934e3f42bf634f13a49d80a, type: 3}
+  hurtMat: {fileID: 2100000, guid: ff2d760569cc2ea458a0871b3ed21652, type: 2}
 --- !u!54 &1885134445
 Rigidbody:
   m_ObjectHideFlags: 0
