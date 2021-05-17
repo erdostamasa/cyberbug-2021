@@ -74660,6 +74660,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 7145416203576739780, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: magazineSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759914236964497763, guid: eedc69d59696dd24789543425ca2b6d3,
+        type: 3}
+      propertyPath: maxAmmoInventory
+      value: 600
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eedc69d59696dd24789543425ca2b6d3, type: 3}
 --- !u!43 &1044779311
@@ -97880,7 +97890,7 @@ PrefabInstance:
     - target: {fileID: 6801184279761514992, guid: bbea365912f93a949a3564b72eb40b4f,
         type: 3}
       propertyPath: maxEnemies
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6801184279761514992, guid: bbea365912f93a949a3564b72eb40b4f,
         type: 3}

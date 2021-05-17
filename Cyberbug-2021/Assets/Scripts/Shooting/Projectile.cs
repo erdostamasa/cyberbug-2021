@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour{
-    [Header("Setup")]
-    [Tooltip("Projectile will not collide with this layer(s)")]
-    [SerializeField] LayerMask ignoreLayer;
-    
-    [Header("Settings")]
-    [Tooltip("Destroy bullet after this many seconds")]
-    [SerializeField] float timeout = 10f;
+    [Header("Setup")] [Tooltip("Projectile will not collide with this layer(s)")] [SerializeField]
+    LayerMask ignoreLayer;
+
+    [Header("Settings")] [Tooltip("Destroy bullet after this many seconds")] [SerializeField]
+    float timeout = 10f;
+
     [SerializeField] float speed = 10f;
-    
-    [Header("Impact settings")]
-    [SerializeField] float explosionRadius = 2f;
+
+    [Header("Impact settings")] [SerializeField]
+    float explosionRadius = 2f;
+
     [SerializeField] float explosionForce = 5f;
-    [Tooltip("How strong the bullet should push on the object")]
-    [SerializeField] float bulletForce = 10f;
-    [Tooltip("How strong the explosion should be relative to distace from impact point")]
-    [SerializeField] AnimationCurve forceFalloff;
+
+    [Tooltip("How strong the bullet should push on the object")] [SerializeField]
+    float bulletForce = 10f;
+
+    [Tooltip("How strong the explosion should be relative to distace from impact point")] [SerializeField]
+    AnimationCurve forceFalloff;
 
     [SerializeField] int damage = 1;
-    
+
     Vector3 lastFramePosition;
+    [SerializeField] GameObject trail;
 
     void Start(){
         // Self destruct after [timeout]
@@ -46,11 +49,13 @@ public class Projectile : MonoBehaviour{
         // Execute effects at impact location
         if (Physics.Raycast(lastFramePosition, direction, out var hit, distance, ~ignoreLayer)){
             IShootable other = hit.collider.GetComponent<IShootable>();
-            if(other != null) other.ReceiveProjectile(damage);
-            Destroy(this.gameObject);
+            if (other != null) other.ReceiveProjectile(damage);
             
+
             BulletImpact(hit);
             Explosion(hit.point);
+            
+            Destroy(this.gameObject);
         }
 
         lastFramePosition = transform.position;
@@ -64,6 +69,11 @@ public class Projectile : MonoBehaviour{
 
         if (body != null){
             body.AddForceAtPosition(forceDirection * bulletForce, hit.point, ForceMode.Impulse);
+        }
+
+        if (trail != null){
+            trail.transform.parent = null;
+            Destroy(trail, 3f);
         }
 
         Destroy(gameObject);
@@ -86,6 +96,7 @@ public class Projectile : MonoBehaviour{
                 body.AddForce(direction * (explosionForce * forceMultiplier), ForceMode.Impulse);
             }
         }
+
         Destroy(gameObject);
     }
 }

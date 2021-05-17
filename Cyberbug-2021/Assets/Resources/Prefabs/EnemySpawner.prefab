@@ -94,5 +94,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spiderPrefab: {fileID: 7699500358902473459, guid: b38d9eafe8f96c14c99ef052067703c1,
     type: 3}
+  gunSpiderPrefab: {fileID: 7699500358902473459, guid: 380f265aed3759d4c9435ef9581e17c7,
+    type: 3}
   enemiesPerStage: 10
   maxEnemies: 10
+  enemyAggroDistance: 50
+  spawnLocations: []
+  infiniteSpawn: 1
+  timed: 0
+  timeToSpawn: 1

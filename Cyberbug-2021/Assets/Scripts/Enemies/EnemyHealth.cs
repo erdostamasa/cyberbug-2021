@@ -10,16 +10,18 @@ public class EnemyHealth : MonoBehaviour, IShootable{
     [SerializeField] float explodeDelay = 10f;
     [SerializeField] GameObject particleObject;
     [SerializeField] AudioClip explosionSound;
+    [SerializeField] GameObject gun;
+
     ParticleSystem ps;
 
     Material normalMat;
     [SerializeField] Material hurtMat;
-    
+
     int currentHealth;
     bool dead = false;
 
     Renderer[] renderers;
-    
+
     public int Health => currentHealth;
 
     public int MaxHealth{
@@ -43,16 +45,21 @@ public class EnemyHealth : MonoBehaviour, IShootable{
         foreach (Renderer meshRenderer in renderers){
             meshRenderer.material = hurtMat;
         }
+
         EventManager.instance.EnemyHit();
         Invoke(nameof(ResetMaterial), 0.1f);
         if (dead) return;
         currentHealth -= damage;
         if (currentHealth <= 0){
+            Destroy(GetComponent<EnemyAI>());
             dead = true;
             GetComponent<LootDropper>().DropLoot();
             ragdoll.ToggleRagdoll(true);
             EventManager.instance.EnemyDied();
             Invoke(nameof(ExplodeSelf), explodeDelay);
+            if (gun != null){
+                Destroy(gun);
+            }
         }
     }
 
@@ -66,7 +73,9 @@ public class EnemyHealth : MonoBehaviour, IShootable{
 
     void ResetMaterial(){
         foreach (Renderer meshRenderer in renderers){
-            meshRenderer.material = normalMat;
+            if (meshRenderer != null){
+                meshRenderer.material = normalMat;
+            }
         }
     }
 }

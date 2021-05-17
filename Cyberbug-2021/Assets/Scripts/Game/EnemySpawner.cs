@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour{
     [SerializeField] GameObject spiderPrefab;
+    [SerializeField] GameObject gunSpiderPrefab;
+    
     int enemiesAlive = 0;
     int stage = 1;
 
@@ -13,7 +15,8 @@ public class EnemySpawner : MonoBehaviour{
     
     [SerializeField] int enemiesPerStage = 10;
     [SerializeField] int maxEnemies = 3;
-
+    [SerializeField] int gunSpiderPerNormalSpider = 4;
+    
     [SerializeField] float enemyAggroDistance = 50f;
 
     public List<Transform> spawnLocations;
@@ -70,6 +73,11 @@ public class EnemySpawner : MonoBehaviour{
             Vector3 spawnPosition = spawnLocations[Random.Range(0, spawnLocations.Count)].position;
             Instantiate(spiderPrefab, spawnPosition, Quaternion.identity).GetComponent<EnemyAI>().aggroDistance = enemyAggroDistance;
             enemiesAlive++;
+            if (i % gunSpiderPerNormalSpider == 0){
+                spawnPosition = spawnLocations[Random.Range(0, spawnLocations.Count)].position;
+                Instantiate(gunSpiderPrefab, spawnPosition, Quaternion.identity).GetComponent<EnemyAI>().aggroDistance = enemyAggroDistance;
+                enemiesAlive++;
+            }
         }
     }
 }
