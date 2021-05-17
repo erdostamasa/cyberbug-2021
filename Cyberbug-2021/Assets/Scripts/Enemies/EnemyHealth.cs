@@ -43,6 +43,7 @@ public class EnemyHealth : MonoBehaviour, IShootable{
         foreach (Renderer meshRenderer in renderers){
             meshRenderer.material = hurtMat;
         }
+        EventManager.instance.EnemyHit();
         Invoke(nameof(ResetMaterial), 0.1f);
         if (dead) return;
         currentHealth -= damage;

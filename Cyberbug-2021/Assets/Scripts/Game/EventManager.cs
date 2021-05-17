@@ -12,6 +12,11 @@ public class EventManager : MonoBehaviour{
         instance = this;
     }
 
+    public event Action onEnemyHit;
+    public void EnemyHit(){
+        onEnemyHit?.Invoke();
+    }
+
     public event Action<int> onStageCompleted;
     public void StageCompleted(int newStage){
         onStageCompleted?.Invoke(newStage);
