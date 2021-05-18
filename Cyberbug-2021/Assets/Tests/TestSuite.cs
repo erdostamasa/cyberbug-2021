@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 
 namespace Tests{
     public class TestSuite{
-        GameObject testObject;
+        /*GameObject testObject;
         GameObject testPlayer;
         EventManager eventManager;
         
@@ -103,7 +103,7 @@ namespace Tests{
             yield return new WaitForSeconds(0.1f);
             Assert.AreEqual(97, health.Health);
         }
-        /*
+        
          //Error test
         [UnityTest]
         public IEnumerator TestError()
