@@ -1,11 +1,14 @@
 # Cyberbug 2021
 > First person shooter realisztikus fizikával, platforminggal, egyszerű mesterséges intelligenciával-val és low poly grafikával
 
-### Szükséges szoftverek:
+A projekt az ELTE Informatika Kar **Tools of Software Projects** tárgya keretében valósult meg.
+
+
+#### Projekt megnyitásához szükséges rendszerkövetelmények
  * Unity 2019.4.21f1
  * OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.12+
 
-### Használt technológiák:
+### Használt technológiák
  * Verziókezelő szoftver: git
  * Verziókezelő szolgáltalás: GitHub
  * Workflow: GitHub flow (https://guides.github.com/introduction/flow/)
@@ -14,7 +17,7 @@
  * Continuous integration + deployment:
    * GitHub Actions
    * GameCI
- * Kommunikáció: 
+ * Kommunikáció:
    * aszinkron: GitHub, Codecks
    * szinkron: Discord
  * Játékmotor: Unity
@@ -23,13 +26,13 @@
 
 ## Részletes terv
 
-### A játékos céljai:
+### A játékos céljai
  * Ellenségek legyőzése
- * Lőszer és gránátok gyűjtése
+ * Lőszer gyűjtése
  * Pályák teljesítése
  * Újabb fegyverek megszerzése
 
-### Felhasználói interakciók:
+### Felhasználói interakciók
  - [x] Kamera mozgatása
  - [x] Mozgás
  - [x] Ugrás
@@ -38,17 +41,17 @@
  - [x] Fegyverek váltása
  - [x] Felhasználói felület
    - [x] Főmenü
-   - [X] Pause menu
-   - [X] Pálya kiválasztása
-   - [X] HUD
+   - [x] Pause menu
+   - [x] Pálya kiválasztása
+   - [x] HUD
 
-### Szimulációk:
+### Szimulációk
  - [x] Unity rigidbody szimuláció
  - [x] Reszponzív mozgás
 
-### Környezet:
- - [X] Low poly modellek és környezet
- - [X] Több pálya
+### Környezet
+ - [x] Low poly modellek és környezet
+ - [x] Több pálya
    * Egyre nehezednek
  - [x] Végtelen aréna egyre több/erősebb ellenféllel
  - [x] Ellenségek
@@ -56,12 +59,12 @@
    - [x] Céloznak és sebzik a játékost
    - [x] Lőszert dobnak ha elpusztulnak
 
-### Grafika, kinézet:
+### Grafika, kinézet
  * Animációk
    * Játékos
-     - [X] Lövés
-     - [X] Újratöltés
-     - [X] Mozgás
+     - [x] Lövés
+     - [x] Újratöltés
+     - [x] Mozgás
    * Ellenségek
      - [x] Mozgás
      - [x] Lövés
@@ -69,13 +72,12 @@
  - [x] Robbanás
    - [x] Golyónyomok
 
-### Extra funkciók:
- - [ ] Futás
- - [ ] Guggolás
- - [ ] Közelharc
- - [ ] Mozgó / forgó platformok
+### Extra funkciók
  - [x] Procedurális animáció inverz kinematikával
- - [ ] Pénz / bolt rendszer
- - [X] Pont / highscore rendszer
- - [ ] Kooperatív többjátékos mód
- - [ ] Játékos játékos ellen többjátékos mód
+ - [x] Pont / highscore rendszer
+ - [ ] ~~Guggolás~~
+ - [ ] ~~Közelharc~~
+ - [ ] ~~Mozgó / forgó platformok~~
+ - [ ] ~~Pénz / bolt rendszer~~
+ - [ ] ~~Kooperatív többjátékos mód~~
+ - [ ] ~~Játékos játékos ellen többjátékos mód~~
