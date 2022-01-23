@@ -4,7 +4,7 @@
 A projekt az ELTE Informatika Kar **Tools of Software Projects** tárgya keretében valósult meg.
 
 
-#### Projekt megnyitásához szükséges rendszerkövetelmények
+### Projekt megnyitásához szükséges rendszerkövetelmények
  * Unity 2019.4.21f1
  * OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.12+
 
